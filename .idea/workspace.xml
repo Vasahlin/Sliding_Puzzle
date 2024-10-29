@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5975c192-4b2c-4a10-b776-2a9d69c619a3" name="Changes" comment="added getCurrentPuzzleOrder()">
+    <list default="true" id="5975c192-4b2c-4a10-b776-2a9d69c619a3" name="Changes" comment="changed isPuzzleSolved()">
+      <change afterPath="$PROJECT_DIR$/test/GameLogicTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameBoard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameLogic.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +61,8 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Downloaded.Files.Path.Enabled": "false",
+    "JUnit.GameLogicTest.executor": "Debug",
+    "JUnit.GameLogicTest.getCurrentPuzzleOrderTest.executor": "Debug",
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
     "Repository.Attach.Sources": "false",
@@ -82,6 +87,34 @@
       <recent name="" />
     </key>
   </component>
+  <component name="RunManager" selected="JUnit.GameLogicTest.getCurrentPuzzleOrderTest">
+    <configuration name="GameLogicTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Sliding_Puzzle" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="GameLogicTest" />
+      <option name="METHOD_NAME" value="getCurrentPuzzleOrderTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GameLogicTest.getCurrentPuzzleOrderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Sliding_Puzzle" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="GameLogicTest" />
+      <option name="METHOD_NAME" value="getCurrentPuzzleOrderTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.GameLogicTest.getCurrentPuzzleOrderTest" />
+        <item itemvalue="JUnit.GameLogicTest" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -100,7 +133,7 @@
       <updated>1730111306128</updated>
       <workItem from="1730111307246" duration="2000" />
       <workItem from="1730111571443" duration="1271000" />
-      <workItem from="1730194318068" duration="5967000" />
+      <workItem from="1730194318068" duration="9465000" />
     </task>
     <task id="LOCAL-00001" summary="Hej Victor">
       <option name="closed" value="true" />
@@ -182,7 +215,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730200300086</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="changed isPuzzleSolved()">
+      <option name="closed" value="true" />
+      <created>1730200562648</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1730200562648</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -198,6 +239,18 @@
     <MESSAGE value="started writing isPuzzleSolved(),&#10;added test root sources" />
     <MESSAGE value="removed test sources root" />
     <MESSAGE value="added getCurrentPuzzleOrder()" />
-    <option name="LAST_COMMIT_MESSAGE" value="added getCurrentPuzzleOrder()" />
+    <MESSAGE value="changed isPuzzleSolved()" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed isPuzzleSolved()" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/GameLogic.java</url>
+          <line>76</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

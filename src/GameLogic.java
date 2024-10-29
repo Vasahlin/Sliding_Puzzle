@@ -9,6 +9,14 @@ public class GameLogic {
         this.gameBoard = gameBoard;
     }
 
+    public int getEmptyTileCol() {
+        return emptyTileCol;
+    }
+
+    public int getEmptyTileRow() {
+        return emptyTileRow;
+    }
+
     public void setSolvedOrder(ArrayList<String> solvedOrder) {
         this.solvedPuzzleOrder = solvedOrder;
     }
@@ -65,9 +73,9 @@ public class GameLogic {
         return false;
     }
 
-    private boolean isValidMove(int pressedRow, int pressedCol) {
-        int horizontalDistance = Math.abs(pressedRow - emptyTileRow);
-        int verticalDistance = Math.abs(pressedCol - emptyTileCol);
+    protected boolean isValidMove(int pressedRow, int pressedCol) {
+        int horizontalDistance = Math.abs(pressedCol - emptyTileCol);
+        int verticalDistance = Math.abs(pressedRow - emptyTileRow);
         return (horizontalDistance == 1 && pressedRow == emptyTileRow) || (verticalDistance == 1 && pressedCol == emptyTileCol);
     }
 

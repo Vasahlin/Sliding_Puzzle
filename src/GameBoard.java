@@ -18,6 +18,10 @@ public class GameBoard {
         gameLogic = new GameLogic(this);
     }
 
+    public GameLogic getGameLogic() { //added for testing purposes
+        return gameLogic;
+    }
+
     public Tile[][] getTiles() {
         return tiles;
     }
