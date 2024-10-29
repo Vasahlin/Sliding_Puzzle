@@ -20,8 +20,30 @@ public class GameLogic {
 
     public void performAction(int row, int column) {
         if (moveTile(row, column)) {
-
+            if (isPuzzleSolved())
+                lockGameState();
         }
+    }
+
+    private boolean isPuzzleSolved() {
+        Tile[][] tiles = gameBoard.getTiles();
+        ArrayList<String> currentPuzzleOrder = new ArrayList<>();
+
+        for (int row = 0; row < tiles.length; row++) {
+            for (int col = 0; col < tiles[row].length; col++) {
+                currentPuzzleOrder.add(tiles[row][col].button().getText());
+            }
+        }
+
+        for (int i = 0; i < solvedPuzzleOrder.size(); i++) {
+            if (solvedPuzzleOrder.get(i).equals(currentPuzzleOrder.get(i)))
+                continue;
+            else if (i == solvedPuzzleOrder.size() - 1 && currentPuzzleOrder.get(i).isEmpty()) {
+                return true;
+            }
+            else break;
+        }
+        return false;
     }
 
     private boolean moveTile(int pressedRow, int pressedCol) {
