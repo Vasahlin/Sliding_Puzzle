@@ -25,15 +25,19 @@ public class GameLogic {
         }
     }
 
-    private boolean isPuzzleSolved() {
+    private ArrayList<String> getCurrentPuzzleOrder() {
         Tile[][] tiles = gameBoard.getTiles();
         ArrayList<String> currentPuzzleOrder = new ArrayList<>();
-
         for (int row = 0; row < tiles.length; row++) {
             for (int col = 0; col < tiles[row].length; col++) {
                 currentPuzzleOrder.add(tiles[row][col].button().getText());
             }
         }
+        return currentPuzzleOrder;
+    }
+
+    private boolean isPuzzleSolved() {
+        ArrayList<String> currentPuzzleOrder = getCurrentPuzzleOrder();
 
         for (int i = 0; i < solvedPuzzleOrder.size(); i++) {
             if (solvedPuzzleOrder.get(i).equals(currentPuzzleOrder.get(i)))
