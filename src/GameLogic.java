@@ -9,6 +9,10 @@ public class GameLogic {
         this.gameBoard = gameBoard;
     }
 
+    public ArrayList<String> getSolvedPuzzleOrder() {
+        return solvedPuzzleOrder;
+    }
+
     public int getEmptyTileCol() {
         return emptyTileCol;
     }
@@ -19,6 +23,7 @@ public class GameLogic {
 
     public void setSolvedOrder(ArrayList<String> solvedOrder) {
         this.solvedPuzzleOrder = solvedOrder;
+        solvedPuzzleOrder.add("");
     }
 
     public void setEmptyTile(int row, int col) {
@@ -37,7 +42,7 @@ public class GameLogic {
 
     }
 
-    private ArrayList<String> getCurrentPuzzleOrder() {
+    protected ArrayList<String> getCurrentPuzzleOrder() {
         Tile[][] tiles = gameBoard.getTiles();
         ArrayList<String> currentPuzzleOrder = new ArrayList<>();
         for (int row = 0; row < tiles.length; row++) {
@@ -50,12 +55,25 @@ public class GameLogic {
 
     private boolean isPuzzleSolved() {
         ArrayList<String> currentPuzzleOrder = getCurrentPuzzleOrder();
+        if (currentPuzzleOrder.size() == solvedPuzzleOrder.size()) {
+            for (int i = 0; i < solvedPuzzleOrder.size(); i++) {
+                if (!solvedPuzzleOrder.get(i).equals(currentPuzzleOrder.get(i)))
+                    break;
+                if ((i == solvedPuzzleOrder.size() - 1) && currentPuzzleOrder.get(i).isEmpty())
+                    return true;
+            }
+        }
+        return false;
+    }
 
-        for (int i = 0; i < solvedPuzzleOrder.size(); i++) {
-            if (!solvedPuzzleOrder.get(i).equals(currentPuzzleOrder.get(i)))
-                break;
-            if ((i == solvedPuzzleOrder.size() - 1) && currentPuzzleOrder.get(i).isEmpty())
-                return true;
+    protected boolean isPuzzleSolved(ArrayList<String> currentPuzzleOrder) {
+        if (currentPuzzleOrder.size() == solvedPuzzleOrder.size()) {
+            for (int i = 0; i < solvedPuzzleOrder.size(); i++) {
+                if (!solvedPuzzleOrder.get(i).equals(currentPuzzleOrder.get(i)))
+                    break;
+                if ((i == solvedPuzzleOrder.size() - 1) && currentPuzzleOrder.get(i).isEmpty())
+                    return true;
+            }
         }
         return false;
     }

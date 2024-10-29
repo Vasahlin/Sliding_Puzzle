@@ -26,7 +26,7 @@ public class GameBoard {
         return tiles;
     }
 
-    public JPanel createGameBoard() {
+    protected JPanel createGameBoard() {
         JPanel panel = new JPanel(new GridLayout(amountRows, amountColumns));
         ArrayList<String> shuffledValues = createShuffledValues();
         int index = 0;
@@ -42,7 +42,7 @@ public class GameBoard {
         return panel;
     }
 
-    private ArrayList<String> createShuffledValues() {
+    protected ArrayList<String> createShuffledValues() {
         ArrayList<String> shuffledValues = new ArrayList<>();
         for (int i = 0; i < amountRows * amountColumns; i++) {
             shuffledValues.add(String.valueOf(i));
