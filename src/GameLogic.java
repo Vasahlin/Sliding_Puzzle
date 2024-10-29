@@ -25,6 +25,10 @@ public class GameLogic {
         }
     }
 
+    private void lockGameState() {
+
+    }
+
     private ArrayList<String> getCurrentPuzzleOrder() {
         Tile[][] tiles = gameBoard.getTiles();
         ArrayList<String> currentPuzzleOrder = new ArrayList<>();
@@ -40,12 +44,10 @@ public class GameLogic {
         ArrayList<String> currentPuzzleOrder = getCurrentPuzzleOrder();
 
         for (int i = 0; i < solvedPuzzleOrder.size(); i++) {
-            if (solvedPuzzleOrder.get(i).equals(currentPuzzleOrder.get(i)))
-                continue;
-            else if (i == solvedPuzzleOrder.size() - 1 && currentPuzzleOrder.get(i).isEmpty()) {
+            if (!solvedPuzzleOrder.get(i).equals(currentPuzzleOrder.get(i)))
+                break;
+            if ((i == solvedPuzzleOrder.size() - 1) && currentPuzzleOrder.get(i).isEmpty())
                 return true;
-            }
-            else break;
         }
         return false;
     }
