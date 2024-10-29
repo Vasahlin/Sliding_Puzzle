@@ -38,7 +38,13 @@ public class GameLogic {
         }
     }
 
-    private void lockGameState() {
+    protected void lockGameState() {
+        Tile[][] tiles = gameBoard.getTiles();
+        for (int row = 0; row < tiles.length; row++) {
+            for (int col = 0; col < tiles[row].length; col++) {
+                tiles[row][col].button().setEnabled(false);
+            }
+        }
 
     }
 

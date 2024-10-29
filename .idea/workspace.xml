@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5975c192-4b2c-4a10-b776-2a9d69c619a3" name="Changes" comment="added empty String to end of solvedPuzzleOrder. tested isPuzzleSolved()">
+    <list default="true" id="5975c192-4b2c-4a10-b776-2a9d69c619a3" name="Changes" comment="tested moveTile()">
       <change beforePath="$PROJECT_DIR$/src/GameLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameLogic.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/GameLogicTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/GameLogicTest.java" afterDir="false" />
     </list>
@@ -63,6 +63,7 @@
     "JUnit.GameLogicTest.executor": "Debug",
     "JUnit.GameLogicTest.getCurrentPuzzleOrderTest.executor": "Run",
     "JUnit.GameLogicTest.isPuzzleSolvedTest.executor": "Debug",
+    "JUnit.GameLogicTest.lockGameStateTest.executor": "Run",
     "JUnit.GameLogicTest.moveTileTest.executor": "Run",
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
@@ -88,23 +89,13 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.GameLogicTest.moveTileTest">
+  <component name="RunManager" selected="JUnit.GameLogicTest.lockGameStateTest">
     <configuration name="GameLogicTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Sliding_Puzzle" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="GameLogicTest" />
       <option name="METHOD_NAME" value="getCurrentPuzzleOrderTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GameLogicTest.createShuffledValuesTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Sliding_Puzzle" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GameLogicTest" />
-      <option name="METHOD_NAME" value="createShuffledValuesTest" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -129,6 +120,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="GameLogicTest.lockGameStateTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Sliding_Puzzle" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="GameLogicTest" />
+      <option name="METHOD_NAME" value="lockGameStateTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="GameLogicTest.moveTileTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Sliding_Puzzle" />
       <option name="PACKAGE_NAME" value="" />
@@ -141,11 +142,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.GameLogicTest.lockGameStateTest" />
         <item itemvalue="JUnit.GameLogicTest.moveTileTest" />
         <item itemvalue="JUnit.GameLogicTest.isPuzzleSolvedTest" />
         <item itemvalue="JUnit.GameLogicTest" />
         <item itemvalue="JUnit.GameLogicTest.getCurrentPuzzleOrderTest" />
-        <item itemvalue="JUnit.GameLogicTest.createShuffledValuesTest" />
       </list>
     </recent_temporary>
   </component>
@@ -167,7 +168,7 @@
       <updated>1730111306128</updated>
       <workItem from="1730111307246" duration="2000" />
       <workItem from="1730111571443" duration="1271000" />
-      <workItem from="1730194318068" duration="12315000" />
+      <workItem from="1730194318068" duration="12803000" />
     </task>
     <task id="LOCAL-00001" summary="Hej Victor">
       <option name="closed" value="true" />
@@ -273,7 +274,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730211998570</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="tested moveTile()">
+      <option name="closed" value="true" />
+      <created>1730212654729</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1730212654729</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -292,6 +301,7 @@
     <MESSAGE value="changed isPuzzleSolved()" />
     <MESSAGE value="tested isValidMove()" />
     <MESSAGE value="added empty String to end of solvedPuzzleOrder. tested isPuzzleSolved()" />
-    <option name="LAST_COMMIT_MESSAGE" value="added empty String to end of solvedPuzzleOrder. tested isPuzzleSolved()" />
+    <MESSAGE value="tested moveTile()" />
+    <option name="LAST_COMMIT_MESSAGE" value="tested moveTile()" />
   </component>
 </project>

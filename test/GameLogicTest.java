@@ -80,5 +80,15 @@ class GameLogicTest {
         assertEquals(newEmptyCol, emptyCol);
     }
 
+    @Test
+    void lockGameStateTest() {
+        JPanel p = gb.createGameBoard();
+
+        gb.getTiles()[0][0].button().setEnabled(true);
+        assertTrue(gb.getTiles()[0][0].button().isEnabled());
+        gb.getGameLogic().lockGameState();
+        assertFalse(gb.getTiles()[0][0].button().isEnabled());
+    }
+
   
 }
