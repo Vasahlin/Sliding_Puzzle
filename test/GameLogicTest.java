@@ -53,5 +53,32 @@ class GameLogicTest {
         assertTrue(gb.getGameLogic().isPuzzleSolved(gb.getGameLogic().getSolvedPuzzleOrder()));
     }
 
+    @Test
+    void moveTileTest() {
+        JPanel p = gb.createGameBoard();
+
+        int emptyCol = gb.getGameLogic().getEmptyTileCol();
+        int emptyRow = gb.getGameLogic().getEmptyTileRow();
+
+        int moveCol = emptyCol;
+        int moveRow = emptyRow + 1;
+        int falseMoveCow = emptyCol + 2;
+
+        String s = gb.getTiles()[moveRow][moveCol].button().getText();
+        String s2 = gb.getTiles()[emptyRow][emptyCol].button().getText();
+
+        assertNotEquals(s, s2);
+        assertFalse(gb.getGameLogic().moveTile(moveRow, falseMoveCow));
+        assertTrue(gb.getGameLogic().moveTile(moveRow, moveCol));
+        s = gb.getTiles()[moveRow][moveCol].button().getText();
+        assertEquals(s, s2);
+        s2 = gb.getTiles()[emptyRow][emptyCol].button().getText();
+        assertNotEquals(s, s2);
+        int newEmptyRow = gb.getGameLogic().getEmptyTileRow();
+        int newEmptyCol = gb.getGameLogic().getEmptyTileCol();
+        assertNotEquals(newEmptyRow, emptyRow);
+        assertEquals(newEmptyCol, emptyCol);
+    }
+
   
 }

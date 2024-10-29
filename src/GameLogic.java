@@ -78,7 +78,7 @@ public class GameLogic {
         return false;
     }
 
-    private boolean moveTile(int pressedRow, int pressedCol) {
+    protected boolean moveTile(int pressedRow, int pressedCol) {
         if (isValidMove(pressedRow, pressedCol)) {
             String s = gameBoard.getTiles()[pressedRow][pressedCol].button().getText();
             gameBoard.getTiles()[emptyTileRow][emptyTileCol].button().setText(s);
