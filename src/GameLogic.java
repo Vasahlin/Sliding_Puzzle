@@ -25,12 +25,17 @@ public class GameLogic {
     }
 
     private boolean moveTile(int pressedRow, int pressedCol) {
+        if (isValidMove(pressedRow, pressedCol)) {
+            //ändra
 
+        }
         return true;
     }
 
     private boolean isValidMove(int pressedRow, int pressedCol) {
-        return true;
+        int horizontalDistance = Math.abs(pressedRow - emptyTileRow);
+        int verticalDistance = Math.abs(pressedCol - emptyTileCol);
+        return (horizontalDistance == 1 && pressedRow == emptyTileRow) || (verticalDistance == 1 && pressedCol == emptyTileCol);
     }
 
 }

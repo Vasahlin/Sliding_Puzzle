@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5975c192-4b2c-4a10-b776-2a9d69c619a3" name="Changes" comment="Added comment in main">
+    <list default="true" id="5975c192-4b2c-4a10-b776-2a9d69c619a3" name="Changes" comment="Added unprogrammed methods.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameLogic.java" afterDir="false" />
     </list>
@@ -24,7 +24,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="Develop" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -58,7 +58,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Develop",
+    "git-widget-placeholder": "GameLogic",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -86,7 +86,7 @@
       <updated>1730111306128</updated>
       <workItem from="1730111307246" duration="2000" />
       <workItem from="1730111571443" duration="1271000" />
-      <workItem from="1730194318068" duration="2810000" />
+      <workItem from="1730194318068" duration="3841000" />
     </task>
     <task id="LOCAL-00001" summary="Hej Victor">
       <option name="closed" value="true" />
@@ -112,7 +112,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730196303054</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added unprogrammed methods.">
+      <option name="closed" value="true" />
+      <created>1730197781219</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1730197781219</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -122,6 +130,7 @@
     <MESSAGE value="Hej Victor" />
     <MESSAGE value="Initial Framework, pair coding" />
     <MESSAGE value="Added comment in main" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added comment in main" />
+    <MESSAGE value="Added unprogrammed methods." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added unprogrammed methods." />
   </component>
 </project>
