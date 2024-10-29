@@ -26,10 +26,16 @@ public class GameLogic {
 
     private boolean moveTile(int pressedRow, int pressedCol) {
         if (isValidMove(pressedRow, pressedCol)) {
-            //ändra
-
+            String s = gameBoard.getTiles()[pressedRow][pressedCol].button().getText();
+            gameBoard.getTiles()[emptyTileRow][emptyTileCol].button().setText(s);
+            gameBoard.getTiles()[emptyTileRow][emptyTileCol].button().setEnabled(true);
+            gameBoard.getTiles()[pressedRow][pressedCol].button().setEnabled(false);
+            gameBoard.getTiles()[pressedRow][pressedCol].button().setText("");
+            emptyTileRow = pressedRow;
+            emptyTileCol = pressedCol;
+            return true;
         }
-        return true;
+        return false;
     }
 
     private boolean isValidMove(int pressedRow, int pressedCol) {
