@@ -31,8 +31,7 @@ public class GameLogic {
             gameBoard.getTiles()[emptyTileRow][emptyTileCol].button().setEnabled(true);
             gameBoard.getTiles()[pressedRow][pressedCol].button().setEnabled(false);
             gameBoard.getTiles()[pressedRow][pressedCol].button().setText("");
-            emptyTileRow = pressedRow;
-            emptyTileCol = pressedCol;
+            setEmptyTile(pressedRow, pressedCol);
             return true;
         }
         return false;
