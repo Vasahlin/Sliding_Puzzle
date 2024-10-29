@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5975c192-4b2c-4a10-b776-2a9d69c619a3" name="Changes" comment="merged GameLogic">
+    <list default="true" id="5975c192-4b2c-4a10-b776-2a9d69c619a3" name="Changes" comment="merged GameLogic, fixed weird workspace.xml error">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameLogic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameWindow.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +61,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.GameWindow.executor": "Debug",
     "Downloaded.Files.Path.Enabled": "false",
     "JUnit.GameLogicTest.createShuffledValuesTest.executor": "Run",
     "JUnit.GameLogicTest.executor": "Run",
@@ -75,6 +77,8 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "git-widget-placeholder": "Develop",
     "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
@@ -88,7 +92,14 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.GameLogicTest.moveTileTest">
+  <component name="RunManager" selected="Application.GameWindow">
+    <configuration name="GameWindow" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="GameWindow" />
+      <module name="Sliding_Puzzle" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="GameLogicTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Sliding_Puzzle" />
       <option name="PACKAGE_NAME" value="" />
@@ -104,16 +115,6 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="GameLogicTest" />
       <option name="METHOD_NAME" value="createShuffledValuesTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GameLogicTest.isPuzzleSolvedTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Sliding_Puzzle" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GameLogicTest" />
-      <option name="METHOD_NAME" value="isPuzzleSolvedTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -141,11 +142,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.GameWindow" />
         <item itemvalue="JUnit.GameLogicTest.moveTileTest" />
         <item itemvalue="JUnit.GameLogicTest.createShuffledValuesTest" />
         <item itemvalue="JUnit.GameLogicTest" />
         <item itemvalue="JUnit.GameLogicTest.lockGameStateTest" />
-        <item itemvalue="JUnit.GameLogicTest.isPuzzleSolvedTest" />
       </list>
     </recent_temporary>
   </component>
@@ -169,6 +170,7 @@
       <workItem from="1730111571443" duration="18000" />
       <workItem from="1730111571443" duration="1271000" />
       <workItem from="1730194318068" duration="12803000" />
+      <workItem from="1730217561368" duration="2349000" />
     </task>
     <task id="LOCAL-00001" summary="Hej Victor">
       <option name="closed" value="true" />
@@ -287,6 +289,29 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/Develop" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Hej Victor" />

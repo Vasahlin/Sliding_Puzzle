@@ -6,6 +6,7 @@ public class GameWindow extends JFrame {
         GameBoard gb = new GameBoard(3,3);
         setLayout(new BorderLayout());
         add(gb.createGameBoard(), BorderLayout.CENTER);
+        //gb.getGameLogic().createShowcase();
         pack();
         setTitle("Sliding Puzzle");
         setVisible(true);

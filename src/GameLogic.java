@@ -45,7 +45,6 @@ public class GameLogic {
                 tiles[row][col].button().setEnabled(false);
             }
         }
-
     }
 
     protected ArrayList<String> getCurrentPuzzleOrder() {
@@ -87,8 +86,8 @@ public class GameLogic {
     protected boolean moveTile(int pressedRow, int pressedCol) {
         if (isValidMove(pressedRow, pressedCol)) {
             String s = gameBoard.getTiles()[pressedRow][pressedCol].button().getText();
-            gameBoard.getTiles()[emptyTileRow][emptyTileCol].button().setText(s);
             gameBoard.getTiles()[emptyTileRow][emptyTileCol].button().setEnabled(true);
+            gameBoard.getTiles()[emptyTileRow][emptyTileCol].button().setText(s);
             gameBoard.getTiles()[pressedRow][pressedCol].button().setEnabled(false);
             gameBoard.getTiles()[pressedRow][pressedCol].button().setText("");
             setEmptyTile(pressedRow, pressedCol);
@@ -103,4 +102,20 @@ public class GameLogic {
         return (horizontalDistance == 1 && pressedRow == emptyTileRow) || (verticalDistance == 1 && pressedCol == emptyTileCol);
     }
 
+    protected void createShowcase() {
+        resetEmptyTile(gameBoard.getTiles());
+        int index = 0;
+        for (int row = 0; row < gameBoard.getTiles().length; row++) {
+            for (int col = 0; col < gameBoard.getTiles()[row].length; col++) {
+                String s = solvedPuzzleOrder.get(index++);
+                gameBoard.getTiles()[row][col].button().setText(s);
+            }
+        }
+    }
+
+    protected void resetEmptyTile(Tile[][] tiles) {
+        tiles[emptyTileRow][emptyTileCol].button().setEnabled(true);
+        tiles[tiles.length-1][tiles[0].length-1].button().setEnabled(false);
+        setEmptyTile(tiles.length-1, tiles[0].length-1);
+    }
 }
