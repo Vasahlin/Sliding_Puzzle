@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5975c192-4b2c-4a10-b776-2a9d69c619a3" name="Changes" comment="Hej Victor">
-      <change afterPath="$PROJECT_DIR$/src/GameBoard.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GameLogic.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Tile.java" afterDir="false" />
+    <list default="true" id="5975c192-4b2c-4a10-b776-2a9d69c619a3" name="Changes" comment="Added comment in main">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameLogic.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +41,9 @@
     &quot;accountId&quot;: &quot;573e9faf-8d2f-4772-8d07-1ba2b3731144&quot;
   }
 }</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
 }</component>
@@ -86,7 +86,7 @@
       <updated>1730111306128</updated>
       <workItem from="1730111307246" duration="2000" />
       <workItem from="1730111571443" duration="1271000" />
-      <workItem from="1730194318068" duration="1660000" />
+      <workItem from="1730194318068" duration="2810000" />
     </task>
     <task id="LOCAL-00001" summary="Hej Victor">
       <option name="closed" value="true" />
@@ -96,7 +96,23 @@
       <option name="project" value="LOCAL" />
       <updated>1730111613966</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Initial Framework, pair coding">
+      <option name="closed" value="true" />
+      <created>1730196098575</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1730196098575</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Added comment in main">
+      <option name="closed" value="true" />
+      <created>1730196303054</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1730196303054</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -104,6 +120,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Hej Victor" />
-    <option name="LAST_COMMIT_MESSAGE" value="Hej Victor" />
+    <MESSAGE value="Initial Framework, pair coding" />
+    <MESSAGE value="Added comment in main" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added comment in main" />
   </component>
 </project>

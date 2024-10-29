@@ -24,7 +24,13 @@ public class GameLogic {
         }
     }
 
-    private boolean moveTile(int row, int column) {
-            //Skriv denna metod
+    private boolean moveTile(int pressedRow, int pressedCol) {
+
+        return true;
     }
+
+    private boolean isValidMove(int pressedRow, int pressedCol) {
+        return true;
+    }
+
 }
