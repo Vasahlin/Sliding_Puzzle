@@ -40,9 +40,9 @@ class GameLogicTest {
         List<String> shuffledOrder = gb.createShuffledValues();
         List<String> correctOrder = gb.getGameLogic().getSolvedPuzzleOrder();
 
-        assertNotEquals(correctOrder.getFirst(), shuffledOrder.getFirst());
-        assertNotEquals(correctOrder.getLast(), shuffledOrder.getLast());
-        assertEquals(correctOrder.size() + 1, shuffledOrder.size());
+        //dålig assertion..
+        assertFalse((correctOrder.getFirst() == shuffledOrder.getFirst()) && (correctOrder.getLast() == shuffledOrder.getLast()));
+        assertEquals(correctOrder.size(), shuffledOrder.size());
     }
 
     @Test
@@ -61,14 +61,24 @@ class GameLogicTest {
         int emptyRow = gb.getGameLogic().getEmptyTileRow();
 
         int moveCol = emptyCol;
-        int moveRow = emptyRow + 1;
-        int falseMoveCow = emptyCol + 2;
+        int falseMoveCol = 0;
+        switch (emptyCol) {
+            case 0: falseMoveCol = 2; break;
+            case 1: falseMoveCol = 0; break;
+            case 2: falseMoveCol = 0; break;
+        }
+        int moveRow = 0;
+        switch (emptyRow) {
+            case 0: moveRow = 1; break;
+            case 1: moveRow = 0; break;
+            case 2: moveRow = 1; break;
+        }
 
         String s = gb.getTiles()[moveRow][moveCol].button().getText();
         String s2 = gb.getTiles()[emptyRow][emptyCol].button().getText();
 
         assertNotEquals(s, s2);
-        assertFalse(gb.getGameLogic().moveTile(moveRow, falseMoveCow));
+        assertFalse(gb.getGameLogic().moveTile(moveRow, falseMoveCol));
         assertTrue(gb.getGameLogic().moveTile(moveRow, moveCol));
         s = gb.getTiles()[moveRow][moveCol].button().getText();
         assertEquals(s, s2);

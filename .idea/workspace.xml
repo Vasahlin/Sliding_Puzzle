@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5975c192-4b2c-4a10-b776-2a9d69c619a3" name="Changes" comment="tested moveTile()">
-      <change beforePath="$PROJECT_DIR$/src/GameLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameLogic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/GameLogicTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/GameLogicTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -21,6 +21,9 @@
         <option value="JUnit5 Test Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="GameLogic" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -60,7 +63,7 @@
   "keyToString": {
     "Downloaded.Files.Path.Enabled": "false",
     "JUnit.GameLogicTest.createShuffledValuesTest.executor": "Run",
-    "JUnit.GameLogicTest.executor": "Debug",
+    "JUnit.GameLogicTest.executor": "Run",
     "JUnit.GameLogicTest.getCurrentPuzzleOrderTest.executor": "Run",
     "JUnit.GameLogicTest.isPuzzleSolvedTest.executor": "Debug",
     "JUnit.GameLogicTest.lockGameStateTest.executor": "Run",
@@ -89,7 +92,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.GameLogicTest.lockGameStateTest">
+  <component name="RunManager" selected="JUnit.GameLogicTest.moveTileTest">
     <configuration name="GameLogicTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Sliding_Puzzle" />
       <option name="PACKAGE_NAME" value="" />
@@ -100,11 +103,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GameLogicTest.getCurrentPuzzleOrderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GameLogicTest.createShuffledValuesTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Sliding_Puzzle" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="GameLogicTest" />
-      <option name="METHOD_NAME" value="getCurrentPuzzleOrderTest" />
+      <option name="METHOD_NAME" value="createShuffledValuesTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -142,11 +145,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.GameLogicTest.lockGameStateTest" />
         <item itemvalue="JUnit.GameLogicTest.moveTileTest" />
-        <item itemvalue="JUnit.GameLogicTest.isPuzzleSolvedTest" />
+        <item itemvalue="JUnit.GameLogicTest.createShuffledValuesTest" />
         <item itemvalue="JUnit.GameLogicTest" />
-        <item itemvalue="JUnit.GameLogicTest.getCurrentPuzzleOrderTest" />
+        <item itemvalue="JUnit.GameLogicTest.lockGameStateTest" />
+        <item itemvalue="JUnit.GameLogicTest.isPuzzleSolvedTest" />
       </list>
     </recent_temporary>
   </component>
@@ -303,5 +306,16 @@
     <MESSAGE value="added empty String to end of solvedPuzzleOrder. tested isPuzzleSolved()" />
     <MESSAGE value="tested moveTile()" />
     <option name="LAST_COMMIT_MESSAGE" value="tested moveTile()" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/test/GameLogicTest.java</url>
+          <line>59</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
