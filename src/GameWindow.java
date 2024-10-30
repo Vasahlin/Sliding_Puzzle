@@ -10,6 +10,9 @@ public class GameWindow extends JFrame {
         } else {
             add(gb.createGameBoard(false), BorderLayout.CENTER);
         }
+        MoveCounter mc = new MoveCounter(this);
+        gb.getGameLogic().setMoveCountListener(mc);
+        add(mc.movePanel(), BorderLayout.SOUTH);
         pack();
         setTitle("Sliding Puzzle");
         setVisible(true);
