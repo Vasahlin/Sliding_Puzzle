@@ -4,20 +4,21 @@ public class GameLogic {
     private int emptyTileCol, emptyTileRow;
     private ArrayList<String> solvedPuzzleOrder;
     private final GameBoard gameBoard;
-    private MoveCountListener moveListener;
+    private MoveCountObserver moveListener;
     private ShuffleButtonListener shuffleListener;
+    private PuzzleSolvedListener puzzleSolvedListener;
     private GameState gameState = GameState.ACTIVE;
 
+    public GameLogic(GameBoard gameBoard) {
+        this.gameBoard = gameBoard;
+
+    }
     public enum GameState {
         ACTIVE, WON_GAME, SHUFFLE
     }
 
     public GameState getGameState() {
         return gameState;
-    }
-
-    public GameLogic(GameBoard gameBoard) {
-        this.gameBoard = gameBoard;
     }
 
     public ArrayList<String> getSolvedPuzzleOrder() {
@@ -32,12 +33,42 @@ public class GameLogic {
         return emptyTileRow;
     }
 
+    public PuzzleSolvedListener getPuzzleSolvedListener() {
+        return puzzleSolvedListener;
+    }
+
     public void setGameState(GameState gameState) {
         this.gameState = gameState;
     }
 
-    public void setMoveCountListener(MoveCountListener listener) {
+    private void notifyShuffler() {
+        if (shuffleListener != null) {
+            shuffleListener.notifyButton();
+        }
+    }
+
+    public void notifyMoveCount() {
+        if (moveListener != null) {
+            moveListener.updateMoveCount();
+        }
+    }
+
+    private void notifyPuzzleListener() {
+        if (puzzleSolvedListener != null) {
+            if (gameState.equals(GameState.WON_GAME)) {
+                puzzleSolvedListener.onPuzzleSolved();
+            } else {
+                puzzleSolvedListener.onPuzzleNotSolved();
+            }
+        }
+    }
+
+    public void setMoveCountListener(MoveCountObserver listener) {
         this.moveListener = listener;
+    }
+
+    public void setPuzzleSolvedListener(PuzzleSolvedListener listener) {
+        this.puzzleSolvedListener = listener;
     }
 
     public void setShuffleButtonListener(ShuffleButtonListener listener) {
@@ -54,20 +85,14 @@ public class GameLogic {
         this.emptyTileCol = col;
     }
 
-    public void notifyMoveCount() {
-        if (moveListener != null) {
-            moveListener.moveCountUpdated();
-        }
-    }
-
     public void performAction(int row, int column) {
         if (moveTile(row, column)) {
             notifyMoveCount();
             if (isPuzzleSolved()) {
                 gameState = GameState.WON_GAME;
-                if (shuffleListener != null) {
-                    shuffleListener.notifyButton();
-                }
+                notifyPuzzleListener();
+                gameBoard.setColor();
+                notifyShuffler();
                 gameBoard.lockGameState();
             }
         }

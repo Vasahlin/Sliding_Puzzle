@@ -122,7 +122,8 @@ public class GameBoard {
 
     protected void setColor() {
         Color color;
-        if (gameLogic.getGameState() == GameLogic.GameState.WON_GAME) {
+        GameLogic.GameState state = gameLogic.getGameState();
+        if (state == GameLogic.GameState.WON_GAME) {
             color = Color.green;
             for (Tile[] tile : tiles) {
                 for (Tile value : tile) {
@@ -131,8 +132,8 @@ public class GameBoard {
                 }
             }
         }
-        if (gameLogic.getGameState() == GameLogic.GameState.ACTIVE
-            && tiles[0][0].button().getBackground() == winColor)  {
+        else if (tiles[0][0].button().getBackground() == winColor &&
+                 state == GameLogic.GameState.ACTIVE || state == GameLogic.GameState.SHUFFLE)  {
             color = defaultColor;
             for (Tile[] tile : tiles) {
                 for (Tile value : tile) {
@@ -148,7 +149,6 @@ public class GameBoard {
         for (Tile[] tile : tiles) {
             for (Tile value : tile) {
                 value.button().setEnabled(false);
-                setColor();
             }
         }
 //        winMessage.setHorizontalAlignment(SwingConstants.CENTER);
