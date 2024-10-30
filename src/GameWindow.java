@@ -2,11 +2,14 @@ import javax.swing.*;
 import java.awt.*;
 
 public class GameWindow extends JFrame {
-    public GameWindow() {
+    public GameWindow(boolean showCase) {
         GameBoard gb = new GameBoard(3,3);
         setLayout(new BorderLayout());
-        add(gb.createGameBoard(), BorderLayout.CENTER);
-        //gb.getGameLogic().createShowcase();
+        if (showCase) {
+            add(gb.createGameBoard(true), BorderLayout.CENTER);
+        } else {
+            add(gb.createGameBoard(false), BorderLayout.CENTER);
+        }
         pack();
         setTitle("Sliding Puzzle");
         setVisible(true);
@@ -15,6 +18,10 @@ public class GameWindow extends JFrame {
     }
 
     public static void main(String[] args) {
-        new GameWindow();
+        if (args.length == 0) {
+            new GameWindow(false);
+        } else {
+            new GameWindow(true);
+        }
     }
 }
