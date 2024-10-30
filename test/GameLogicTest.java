@@ -57,7 +57,8 @@ class GameLogicTest {
         int emptyCol = gb.getGameLogic().getEmptyTileCol();
         int emptyRow = gb.getGameLogic().getEmptyTileRow();
 
-        int falseMoveCol = switch (emptyCol) {
+        int falseMoveCol;
+        falseMoveCol = switch (emptyCol) {
             case 0 -> 2;
             default -> 0;
         };
@@ -88,7 +89,7 @@ class GameLogicTest {
 
         gb.getTiles()[0][0].button().setEnabled(true);
         assertTrue(gb.getTiles()[0][0].button().isEnabled());
-        gb.getGameLogic().lockGameState();
+        gb.lockGameState();
         assertFalse(gb.getTiles()[0][0].button().isEnabled());
     }
 
