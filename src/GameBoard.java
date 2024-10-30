@@ -41,6 +41,9 @@ public class GameBoard {
             for (int col = 0; col < amountColumns; col++) {
                 String value = values.get(index++);
                 tiles[row][col] = new Tile(new JButton(value));
+                int buttonHeight = 90;
+                int buttonWidth = 90;
+                tiles[row][col].button().setPreferredSize(new Dimension(buttonWidth, buttonHeight));
                 tiles[row][col].button().addActionListener(new ButtonListener(row, col));
                 panel.add(tiles[row][col].button());
             }
@@ -72,7 +75,7 @@ public class GameBoard {
         JButton button = new JButton("Shuffle");
         ArrayList<String> values = ascendingValues();
 
-        button.addActionListener(actionEvent -> {
+        button.addActionListener(_ -> {
             Collections.shuffle(values);
             int index = 0;
             for (Tile[] row : tiles) {
