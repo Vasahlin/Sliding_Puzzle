@@ -151,8 +151,5 @@ public class GameBoard {
                 value.button().setEnabled(false);
             }
         }
-//        winMessage.setHorizontalAlignment(SwingConstants.CENTER);
-//        winMessage.setText("*** You win! ***");
-//        shuffleButton.setText()
     }
 }
