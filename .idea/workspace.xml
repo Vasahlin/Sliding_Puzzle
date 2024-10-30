@@ -6,8 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="5975c192-4b2c-4a10-b776-2a9d69c619a3" name="Changes" comment="merged GameLogic, fixed weird workspace.xml error">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameBoard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameLogic.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/GameLogicTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/GameLogicTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,12 +41,12 @@
     &quot;assignee&quot;: &quot;audioanton&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Vasahlin/Sliding_Puzzle.git&quot;,
-    &quot;accountId&quot;: &quot;573e9faf-8d2f-4772-8d07-1ba2b3731144&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Vasahlin/Sliding_Puzzle",
+    "accountId": "fb76516b-ebfe-40f0-8c39-c0a004a38b9b"
   }
-}</component>
+}]]></component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -66,7 +68,8 @@
     "JUnit.GameLogicTest.createShuffledValuesTest.executor": "Run",
     "JUnit.GameLogicTest.executor": "Run",
     "JUnit.GameLogicTest.getCurrentPuzzleOrderTest.executor": "Run",
-    "JUnit.GameLogicTest.isPuzzleSolvedTest.executor": "Debug",
+    "JUnit.GameLogicTest.isPuzzleSolvedTest.executor": "Run",
+    "JUnit.GameLogicTest.isValidMoveTest.executor": "Run",
     "JUnit.GameLogicTest.lockGameStateTest.executor": "Run",
     "JUnit.GameLogicTest.moveTileTest.executor": "Run",
     "Repository.Attach.Annotations": "false",
@@ -75,8 +78,9 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "Develop",
+    "git-widget-placeholder": "Refactoring",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Javaprogram/OOP/Exam_3/Test",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
@@ -92,20 +96,10 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.GameWindow">
+  <component name="RunManager" selected="JUnit.GameLogicTest.moveTileTest">
     <configuration name="GameWindow" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GameWindow" />
       <module name="Sliding_Puzzle" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GameLogicTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Sliding_Puzzle" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GameLogicTest" />
-      <option name="METHOD_NAME" value="getCurrentPuzzleOrderTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -120,11 +114,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GameLogicTest.lockGameStateTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GameLogicTest.isPuzzleSolvedTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Sliding_Puzzle" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="GameLogicTest" />
-      <option name="METHOD_NAME" value="lockGameStateTest" />
+      <option name="METHOD_NAME" value="isPuzzleSolvedTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GameLogicTest.isValidMoveTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Sliding_Puzzle" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="GameLogicTest" />
+      <option name="METHOD_NAME" value="isValidMoveTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -142,11 +146,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.GameWindow" />
         <item itemvalue="JUnit.GameLogicTest.moveTileTest" />
+        <item itemvalue="JUnit.GameLogicTest.isValidMoveTest" />
+        <item itemvalue="JUnit.GameLogicTest.isPuzzleSolvedTest" />
         <item itemvalue="JUnit.GameLogicTest.createShuffledValuesTest" />
-        <item itemvalue="JUnit.GameLogicTest" />
-        <item itemvalue="JUnit.GameLogicTest.lockGameStateTest" />
+        <item itemvalue="Application.GameWindow" />
       </list>
     </recent_temporary>
   </component>
@@ -329,16 +333,5 @@
     <MESSAGE value="tested moveTile()" />
     <MESSAGE value="merged GameLogic" />
     <option name="LAST_COMMIT_MESSAGE" value="merged GameLogic" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/test/GameLogicTest.java</url>
-          <line>59</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
