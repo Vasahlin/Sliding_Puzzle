@@ -9,6 +9,7 @@ public class GameBoard {
     private final int amountRows, amountColumns;
     private final Tile[][] tiles;
     private final GameLogic gameLogic;
+    protected JLabel winMessage = new JLabel();
 
     public GameBoard(int amountRows, int amountColumns) {
         this.amountRows = amountRows;
@@ -68,7 +69,17 @@ public class GameBoard {
         gameLogic.setSolvedOrder(new ArrayList<>(ascendingValues.subList(1, ascendingValues.size())));
     }
 
-    public JButton shuffleButton() {
+    protected JPanel createSouthPanel() {
+        JPanel panel = new JPanel(new BorderLayout());
+        JButton exitButton = new JButton("Exit");
+        exitButton.addActionListener(actionEvent -> System.exit(0));
+        panel.add(winMessage, BorderLayout.NORTH);
+        panel.add(exitButton, BorderLayout.CENTER);
+        panel.add(shuffleButton(), BorderLayout.SOUTH);
+        return panel;
+    }
+
+    protected JButton shuffleButton() {
         JButton button = new JButton("Shuffle");
         ArrayList<String> values = ascendingValues();
 

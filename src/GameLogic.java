@@ -1,3 +1,5 @@
+import javax.swing.*;
+import java.awt.*;
 import java.util.ArrayList;
 
 public class GameLogic {
@@ -51,8 +53,11 @@ public class GameLogic {
         for (Tile[] tile : tiles) {
             for (Tile value : tile) {
                 value.button().setEnabled(false);
+                value.button().setBackground(Color.GREEN);
             }
         }
+        gameBoard.winMessage.setHorizontalAlignment(SwingConstants.CENTER);
+        gameBoard.winMessage.setText("*** You win! ***");
     }
 
     protected boolean isPuzzleSolved() {
