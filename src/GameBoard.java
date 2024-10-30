@@ -69,6 +69,23 @@ public class GameBoard {
         gameLogic.setSolvedOrder(new ArrayList<>(ascendingValues.subList(1, ascendingValues.size())));
     }
 
+    public JButton shuffleButton() {
+        JButton button = new JButton("Shuffle");
+        ArrayList<String> values = ascendingValues();
+
+        button.addActionListener(actionEvent -> {
+            Collections.shuffle(values);
+            int index = 0;
+            for (Tile[] row : tiles) {
+                for (Tile tile : row) {
+                    tile.button().setText(values.get(index++));
+                    tile.button().setEnabled(true);
+                }
+            }
+            setEmptyTile();
+        });
+        return button;
+    }
 
     private class ButtonListener implements ActionListener {
         private final int row, column;

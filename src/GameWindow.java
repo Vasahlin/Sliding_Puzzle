@@ -10,6 +10,7 @@ public class GameWindow extends JFrame {
         } else {
             add(gb.createGameBoard(false), BorderLayout.CENTER);
         }
+        add(gb.shuffleButton(), BorderLayout.SOUTH);
         pack();
         setTitle("Sliding Puzzle");
         setVisible(true);
