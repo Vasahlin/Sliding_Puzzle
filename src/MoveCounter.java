@@ -1,7 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 
-public class MoveCounter implements MoveCountListener {
+public class MoveCounter implements MoveCountObserver {
     JLabel label;
     private int moveCount = 0;
     private final GameWindow gameWindow;
@@ -23,7 +23,7 @@ public class MoveCounter implements MoveCountListener {
     }
 
     @Override
-    public void moveCountUpdated() {
+    public void updateMoveCount() {
         if (gameLogic.getGameState() == GameLogic.GameState.WON_GAME) {
             moveCount = -1;
         }
