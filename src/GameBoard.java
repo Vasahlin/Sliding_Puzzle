@@ -9,8 +9,8 @@ public class GameBoard {
     private final int amountRows, amountColumns;
     private final Tile[][] tiles;
     private final GameLogic gameLogic;
-    protected JLabel winMessage = new JLabel();
-    protected JButton shuffleButton = new JButton("Shuffle");
+    private final Color defaultColor = new JPanel().getBackground();
+    private final Color winColor = Color.GREEN;
 
     public GameBoard(int amountRows, int amountColumns) {
         this.amountRows = amountRows;
@@ -58,14 +58,14 @@ public class GameBoard {
                 panel.add(tiles[row][col].button());
             }
         }
-        while (!gameLogic.isSolvable(tiles)) {
+        while (gameLogic.isNotSolvable(tiles)) {
             newValues();
         }
         setEmptyTile();
         return panel;
     }
 
-    private void newValues() {
+    protected void newValues() {
         ArrayList<String> values = createShuffledValues();
         int index = 0;
         for (int row = 0; row < amountRows; row++) {
@@ -94,39 +94,6 @@ public class GameBoard {
         gameLogic.setSolvedOrder(new ArrayList<>(ascendingValues.subList(1, ascendingValues.size())));
     }
 
-    protected JPanel createSouthPanel(MoveCounter mc) {
-        JPanel panel = new JPanel(new BorderLayout());
-        JButton exitButton = new JButton("Exit");
-        exitButton.addActionListener(_ -> System.exit(0));
-        panel.add(winMessage, BorderLayout.NORTH);
-        panel.add(shuffleButton(mc), BorderLayout.CENTER);
-        panel.add(exitButton, BorderLayout.SOUTH);
-        return panel;
-    }
-
-    protected JButton shuffleButton(MoveCounter mc) {
-
-        ArrayList<String> values = ascendingValues();
-
-        shuffleButton.addActionListener(_ -> {
-            if (shuffleButton.getText().equals("New Game")) {
-                winMessage.setText("");
-                mc.resetMoveCount();
-                shuffleButton.setText("Shuffle");
-            }
-            Collections.shuffle(values);
-            int index = 0;
-            for (Tile[] row : tiles) {
-                for (Tile tile : row) {
-                    tile.button().setText(values.get(index++));
-                    tile.button().setEnabled(true);
-                }
-            }
-            setEmptyTile();
-        });
-        return shuffleButton;
-    }
-
     private class ButtonListener implements ActionListener {
         private final int row, column;
 
@@ -141,7 +108,7 @@ public class GameBoard {
         }
     }
 
-    private void setEmptyTile() {
+    protected void setEmptyTile() {
         for (int row = 0; row < amountRows; row++) {
             for (int col = 0; col < amountColumns; col++) {
                 if (tiles[row][col].button().getText().equals("0")) {
@@ -151,5 +118,41 @@ public class GameBoard {
                 }
             }
         }
+    }
+
+    protected void setColor() {
+        Color color;
+        if (gameLogic.getGameState() == GameLogic.GameState.WON_GAME) {
+            color = Color.green;
+            for (Tile[] tile : tiles) {
+                for (Tile value : tile) {
+                    value.button().setEnabled(false);
+                    value.button().setBackground(color);
+                }
+            }
+        }
+        if (gameLogic.getGameState() == GameLogic.GameState.ACTIVE
+            && tiles[0][0].button().getBackground() == winColor)  {
+            color = defaultColor;
+            for (Tile[] tile : tiles) {
+                for (Tile value : tile) {
+                    value.button().setEnabled(true);
+                    value.button().setBackground(color);
+                }
+            }
+            setEmptyTile();
+        }
+    }
+
+    protected void lockGameState() {
+        for (Tile[] tile : tiles) {
+            for (Tile value : tile) {
+                value.button().setEnabled(false);
+                setColor();
+            }
+        }
+//        winMessage.setHorizontalAlignment(SwingConstants.CENTER);
+//        winMessage.setText("*** You win! ***");
+//        shuffleButton.setText()
     }
 }

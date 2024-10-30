@@ -1,5 +1,3 @@
-import javax.swing.*;
-import java.awt.*;
 import java.util.ArrayList;
 
 public class GameLogic {
@@ -7,6 +5,16 @@ public class GameLogic {
     private ArrayList<String> solvedPuzzleOrder;
     private final GameBoard gameBoard;
     private MoveCountListener moveListener;
+    private ShuffleButtonListener shuffleListener;
+    private GameState gameState = GameState.ACTIVE;
+
+    public enum GameState {
+        ACTIVE, WON_GAME, SHUFFLE
+    }
+
+    public GameState getGameState() {
+        return gameState;
+    }
 
     public GameLogic(GameBoard gameBoard) {
         this.gameBoard = gameBoard;
@@ -24,8 +32,16 @@ public class GameLogic {
         return emptyTileRow;
     }
 
+    public void setGameState(GameState gameState) {
+        this.gameState = gameState;
+    }
+
     public void setMoveCountListener(MoveCountListener listener) {
         this.moveListener = listener;
+    }
+
+    public void setShuffleButtonListener(ShuffleButtonListener listener) {
+        this.shuffleListener = listener;
     }
 
     public void setSolvedOrder(ArrayList<String> solvedOrder) {
@@ -38,27 +54,23 @@ public class GameLogic {
         this.emptyTileCol = col;
     }
 
-    public void performAction(int row, int column) {
-        if (moveTile(row, column)) {
-            if (moveListener != null) {
-                moveListener.moveCountUpdated();
-            }
-            if (isPuzzleSolved())
-                lockGameState();
+    public void notifyMoveCount() {
+        if (moveListener != null) {
+            moveListener.moveCountUpdated();
         }
     }
 
-    protected void lockGameState() {
-        Tile[][] tiles = gameBoard.getTiles();
-        for (Tile[] tile : tiles) {
-            for (Tile value : tile) {
-                value.button().setEnabled(false);
-                value.button().setBackground(Color.GREEN);
+    public void performAction(int row, int column) {
+        if (moveTile(row, column)) {
+            notifyMoveCount();
+            if (isPuzzleSolved()) {
+                gameState = GameState.WON_GAME;
+                if (shuffleListener != null) {
+                    shuffleListener.notifyButton();
+                }
+                gameBoard.lockGameState();
             }
         }
-        gameBoard.winMessage.setHorizontalAlignment(SwingConstants.CENTER);
-        gameBoard.winMessage.setText("*** You win! ***");
-        gameBoard.shuffleButton.setText("New Game");
     }
 
     protected boolean isPuzzleSolved() {
@@ -82,7 +94,7 @@ public class GameLogic {
     }
 
     private boolean bottomRightTileEmpty() {
-        Tile[] bottomRow = gameBoard.getTiles()[gameBoard.getTiles().length -1];
+        Tile[] bottomRow = gameBoard.getTiles()[gameBoard.getTiles().length - 1];
         return bottomRow[bottomRow.length - 1].button().getText().isEmpty();
     }
 
@@ -105,11 +117,10 @@ public class GameLogic {
         return (horizontalDistance == 1 && pressedRow == emptyTileRow) || (verticalDistance == 1 && pressedCol == emptyTileCol);
     }
 
-    private int getInvCount(int[] arr)
-    {
+    private int getInvCount(int[] arr) {
         int rows = gameBoard.getAmountRows(), cols = gameBoard.getAmountColumns();
         int inv_count = 0;
-        for (int row = 0; row < gameBoard.getAmountRows() *  - 1; row++) {
+        for (int row = 0; row < gameBoard.getAmountRows() * -1; row++) {
             for (int col = row + 1; col < rows * cols; col++) {
                 // count pairs(arr[i], arr[j]) such that
                 // i < j but arr[i] > arr[j]
@@ -122,8 +133,7 @@ public class GameLogic {
     }
 
     // find Position of blank from bottom
-    private int findXPosition(Tile[][] board)
-    {
+    private int findXPosition(Tile[][] board) {
         int rows = gameBoard.getAmountRows();
         // start from bottom-right corner of matrix
         for (int i = rows - 1; i >= 0; i--)
@@ -135,8 +145,7 @@ public class GameLogic {
 
     // This function returns true if given
     // instance of N*N - 1 puzzle is solvable
-    protected boolean isSolvable(Tile[][] board)
-    {
+    protected boolean isNotSolvable(Tile[][] board) {
         int rows = gameBoard.getAmountRows(), cols = gameBoard.getAmountColumns();
         // Count inversions in given puzzle
         int[] values = new int[rows * cols];
@@ -155,14 +164,14 @@ public class GameLogic {
         // If grid is odd, return true if inversion
         // count is even.
         if (rows % 2 == 1)
-            return invCount % 2 == 0;
+            return invCount % 2 != 0;
         else // grid is even
         {
             int pos = findXPosition(board);
             if (pos % 2 == 1)
-                return invCount % 2 == 0;
+                return invCount % 2 != 0;
             else
-                return invCount % 2 == 1;
+                return invCount % 2 != 1;
         }
     }
 
