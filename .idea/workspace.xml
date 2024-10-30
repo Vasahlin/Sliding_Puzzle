@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5975c192-4b2c-4a10-b776-2a9d69c619a3" name="Changes" comment="merged GameLogic, fixed weird workspace.xml error">
+    <list default="true" id="5975c192-4b2c-4a10-b776-2a9d69c619a3" name="Changes" comment="added createShowcase(), &#10;resetEmptyTile()">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameLogic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameWindow.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,31 +58,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.GameWindow.executor": "Debug",
-    "Downloaded.Files.Path.Enabled": "false",
-    "JUnit.GameLogicTest.createShuffledValuesTest.executor": "Run",
-    "JUnit.GameLogicTest.executor": "Run",
-    "JUnit.GameLogicTest.getCurrentPuzzleOrderTest.executor": "Run",
-    "JUnit.GameLogicTest.isPuzzleSolvedTest.executor": "Debug",
-    "JUnit.GameLogicTest.lockGameStateTest.executor": "Run",
-    "JUnit.GameLogicTest.moveTileTest.executor": "Run",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "Develop",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.GameWindow.executor&quot;: &quot;Run&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;JUnit.GameLogicTest.createShuffledValuesTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GameLogicTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GameLogicTest.getCurrentPuzzleOrderTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GameLogicTest.isPuzzleSolvedTest.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.GameLogicTest.lockGameStateTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GameLogicTest.moveTileTest.executor&quot;: &quot;Run&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Develop&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -170,7 +169,9 @@
       <workItem from="1730111571443" duration="18000" />
       <workItem from="1730111571443" duration="1271000" />
       <workItem from="1730194318068" duration="12803000" />
-      <workItem from="1730217561368" duration="2349000" />
+      <workItem from="1730217561368" duration="2905000" />
+      <workItem from="1730275222836" duration="52000" />
+      <workItem from="1730292908067" duration="483000" />
     </task>
     <task id="LOCAL-00001" summary="Hej Victor">
       <option name="closed" value="true" />
@@ -284,7 +285,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730212654729</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="added createShowcase(), &#10;resetEmptyTile()">
+      <option name="closed" value="true" />
+      <created>1730220147349</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1730220147349</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -328,7 +337,8 @@
     <MESSAGE value="added empty String to end of solvedPuzzleOrder. tested isPuzzleSolved()" />
     <MESSAGE value="tested moveTile()" />
     <MESSAGE value="merged GameLogic" />
-    <option name="LAST_COMMIT_MESSAGE" value="merged GameLogic" />
+    <MESSAGE value="added createShowcase(), &#10;resetEmptyTile()" />
+    <option name="LAST_COMMIT_MESSAGE" value="added createShowcase(), &#10;resetEmptyTile()" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
