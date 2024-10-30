@@ -104,4 +104,66 @@ public class GameLogic {
         int verticalDistance = Math.abs(pressedRow - emptyTileRow);
         return (horizontalDistance == 1 && pressedRow == emptyTileRow) || (verticalDistance == 1 && pressedCol == emptyTileCol);
     }
+
+    private int getInvCount(int[] arr)
+    {
+        int rows = gameBoard.getAmountRows(), cols = gameBoard.getAmountColumns();
+        int inv_count = 0;
+        for (int row = 0; row < gameBoard.getAmountRows() *  - 1; row++) {
+            for (int col = row + 1; col < rows * cols; col++) {
+                // count pairs(arr[i], arr[j]) such that
+                // i < j but arr[i] > arr[j]
+                if (arr[col] != 0 && arr[row] != 0
+                    && arr[row] > arr[col])
+                    inv_count++;
+            }
+        }
+        return inv_count;
+    }
+
+    // find Position of blank from bottom
+    private int findXPosition(Tile[][] board)
+    {
+        int rows = gameBoard.getAmountRows();
+        // start from bottom-right corner of matrix
+        for (int i = rows - 1; i >= 0; i--)
+            for (int j = rows - 1; j >= 0; j--)
+                if (board[i][j].button().getText().isEmpty())
+                    return rows - i;
+        return -1;
+    }
+
+    // This function returns true if given
+    // instance of N*N - 1 puzzle is solvable
+    protected boolean isSolvable(Tile[][] board)
+    {
+        int rows = gameBoard.getAmountRows(), cols = gameBoard.getAmountColumns();
+        // Count inversions in given puzzle
+        int[] values = new int[rows * cols];
+        int k = 0;
+
+        for (int row = 0; row < rows; row++)
+            for (int col = 0; col < cols; col++)
+                if (!(board[row][col].button().getText()).isEmpty()) {
+                    values[k++] = Integer.parseInt(board[row][col].button().getText());
+                } else {
+                    values[k++] = 0;
+                }
+
+        int invCount = getInvCount(values);
+
+        // If grid is odd, return true if inversion
+        // count is even.
+        if (rows % 2 == 1)
+            return invCount % 2 == 0;
+        else // grid is even
+        {
+            int pos = findXPosition(board);
+            if (pos % 2 == 1)
+                return invCount % 2 == 0;
+            else
+                return invCount % 2 == 1;
+        }
+    }
+
 }

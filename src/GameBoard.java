@@ -19,6 +19,14 @@ public class GameBoard {
         gameLogic = new GameLogic(this);
     }
 
+    public int getAmountRows() {
+        return amountRows;
+    }
+
+    public int getAmountColumns() {
+        return amountColumns;
+    }
+
     public GameLogic getGameLogic() { //added for testing purposes
         return gameLogic;
     }
@@ -50,8 +58,21 @@ public class GameBoard {
                 panel.add(tiles[row][col].button());
             }
         }
+        while (!gameLogic.isSolvable(tiles)) {
+            newValues();
+        }
         setEmptyTile();
         return panel;
+    }
+
+    private void newValues() {
+        ArrayList<String> values = createShuffledValues();
+        int index = 0;
+        for (int row = 0; row < amountRows; row++) {
+            for (int col = 0; col < amountColumns; col++) {
+                tiles[row][col].button().setText(values.get(index++));
+            }
+        }
     }
 
     protected ArrayList<String> ascendingValues() {
@@ -76,7 +97,7 @@ public class GameBoard {
     protected JPanel createSouthPanel(MoveCounter mc) {
         JPanel panel = new JPanel(new BorderLayout());
         JButton exitButton = new JButton("Exit");
-        exitButton.addActionListener(actionEvent -> System.exit(0));
+        exitButton.addActionListener(_ -> System.exit(0));
         panel.add(winMessage, BorderLayout.NORTH);
         panel.add(shuffleButton(mc), BorderLayout.CENTER);
         panel.add(exitButton, BorderLayout.SOUTH);
