@@ -13,6 +13,7 @@ public class GameWindow extends JFrame {
         MoveCounter mc = new MoveCounter(this);
         gb.getGameLogic().setMoveCountListener(mc);
         add(mc.movePanel(), BorderLayout.SOUTH);
+        add(gb.shuffleButton(), BorderLayout.SOUTH);
         pack();
         setTitle("Sliding Puzzle");
         setVisible(true);
