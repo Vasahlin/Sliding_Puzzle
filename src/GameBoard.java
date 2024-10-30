@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class GameBoard {
-
     private final int amountRows, amountColumns;
     private final Tile[][] tiles;
     private final GameLogic gameLogic;

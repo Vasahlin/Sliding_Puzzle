@@ -4,6 +4,7 @@ public class GameLogic {
     private int emptyTileCol, emptyTileRow;
     private ArrayList<String> solvedPuzzleOrder;
     private final GameBoard gameBoard;
+    private MoveCountListener moveListener;
 
     public GameLogic(GameBoard gameBoard) {
         this.gameBoard = gameBoard;
@@ -21,6 +22,10 @@ public class GameLogic {
         return emptyTileRow;
     }
 
+    public void setMoveCountListener(MoveCountListener listener) {
+        this.moveListener = listener;
+    }
+
     public void setSolvedOrder(ArrayList<String> solvedOrder) {
         this.solvedPuzzleOrder = solvedOrder;
         solvedPuzzleOrder.add("");
@@ -33,6 +38,9 @@ public class GameLogic {
 
     public void performAction(int row, int column) {
         if (moveTile(row, column)) {
+            if (moveListener != null) {
+                moveListener.moveCountUpdated();
+            }
             if (isPuzzleSolved())
                 lockGameState();
         }
