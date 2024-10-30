@@ -26,4 +26,10 @@ public class MoveCounter implements MoveCountListener {
         gameWindow.revalidate();
         gameWindow.repaint();
     }
+
+    public void resetMoveCount() {
+        moveCount = 0;
+        gameWindow.revalidate();
+        gameWindow.repaint();
+    }
 }

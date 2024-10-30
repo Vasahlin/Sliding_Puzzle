@@ -10,6 +10,7 @@ public class GameBoard {
     private final Tile[][] tiles;
     private final GameLogic gameLogic;
     protected JLabel winMessage = new JLabel();
+    protected JButton shuffleButton = new JButton("Shuffle");
 
     public GameBoard(int amountRows, int amountColumns) {
         this.amountRows = amountRows;
@@ -72,21 +73,26 @@ public class GameBoard {
         gameLogic.setSolvedOrder(new ArrayList<>(ascendingValues.subList(1, ascendingValues.size())));
     }
 
-    protected JPanel createSouthPanel() {
+    protected JPanel createSouthPanel(MoveCounter mc) {
         JPanel panel = new JPanel(new BorderLayout());
         JButton exitButton = new JButton("Exit");
         exitButton.addActionListener(actionEvent -> System.exit(0));
         panel.add(winMessage, BorderLayout.NORTH);
-        panel.add(exitButton, BorderLayout.CENTER);
-        panel.add(shuffleButton(), BorderLayout.SOUTH);
+        panel.add(shuffleButton(mc), BorderLayout.CENTER);
+        panel.add(exitButton, BorderLayout.SOUTH);
         return panel;
     }
 
-    protected JButton shuffleButton() {
-        JButton button = new JButton("Shuffle");
+    protected JButton shuffleButton(MoveCounter mc) {
+
         ArrayList<String> values = ascendingValues();
 
-        button.addActionListener(_ -> {
+        shuffleButton.addActionListener(_ -> {
+            if (shuffleButton.getText().equals("New Game")) {
+                winMessage.setText("");
+                mc.resetMoveCount();
+                shuffleButton.setText("Shuffle");
+            }
             Collections.shuffle(values);
             int index = 0;
             for (Tile[] row : tiles) {
@@ -97,7 +103,7 @@ public class GameBoard {
             }
             setEmptyTile();
         });
-        return button;
+        return shuffleButton;
     }
 
     private class ButtonListener implements ActionListener {

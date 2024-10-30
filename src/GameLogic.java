@@ -58,6 +58,7 @@ public class GameLogic {
         }
         gameBoard.winMessage.setHorizontalAlignment(SwingConstants.CENTER);
         gameBoard.winMessage.setText("*** You win! ***");
+        gameBoard.shuffleButton.setText("New Game");
     }
 
     protected boolean isPuzzleSolved() {
