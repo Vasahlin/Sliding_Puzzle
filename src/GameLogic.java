@@ -134,16 +134,16 @@ public class GameLogic {
 
     // This function returns true if given
     // instance of N*N - 1 puzzle is solvable
-    private boolean isSolvable(Tile[][] board)
+    protected boolean isSolvable(Tile[][] board)
     {
         int rows = gameBoard.getAmountRows(), cols = gameBoard.getAmountColumns();
         // Count inversions in given puzzle
         int[] values = new int[rows * cols];
         int k = 0;
-        String value;
+
         for (int row = 0; row < rows; row++)
             for (int col = 0; col < cols; col++)
-                if (!(value = board[row][col].button().getText()).isEmpty()) {
+                if (!(board[row][col].button().getText()).isEmpty()) {
                     values[k++] = Integer.parseInt(board[row][col].button().getText());
                 } else {
                     values[k++] = 0;

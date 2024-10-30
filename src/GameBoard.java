@@ -57,8 +57,21 @@ public class GameBoard {
                 panel.add(tiles[row][col].button());
             }
         }
+        while (!gameLogic.isSolvable(tiles)) {
+            newValues();
+        }
         setEmptyTile();
         return panel;
+    }
+
+    private void newValues() {
+        ArrayList<String> values = createShuffledValues();
+        int index = 0;
+        for (int row = 0; row < amountRows; row++) {
+            for (int col = 0; col < amountColumns; col++) {
+                tiles[row][col].button().setText(values.get(index++));
+            }
+        }
     }
 
     protected ArrayList<String> ascendingValues() {
