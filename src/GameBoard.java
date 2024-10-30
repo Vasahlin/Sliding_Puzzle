@@ -18,6 +18,14 @@ public class GameBoard {
         gameLogic = new GameLogic(this);
     }
 
+    public int getAmountRows() {
+        return amountRows;
+    }
+
+    public int getAmountColumns() {
+        return amountColumns;
+    }
+
     public GameLogic getGameLogic() { //added for testing purposes
         return gameLogic;
     }
@@ -75,7 +83,7 @@ public class GameBoard {
     protected JPanel createSouthPanel() {
         JPanel panel = new JPanel(new BorderLayout());
         JButton exitButton = new JButton("Exit");
-        exitButton.addActionListener(actionEvent -> System.exit(0));
+        exitButton.addActionListener(_ -> System.exit(0));
         panel.add(winMessage, BorderLayout.NORTH);
         panel.add(exitButton, BorderLayout.CENTER);
         panel.add(shuffleButton(), BorderLayout.SOUTH);
