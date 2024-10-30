@@ -44,6 +44,7 @@ public class ShuffleButton implements ShuffleButtonListener {
             }
         }
         logic.notifyMoveCount();
+        logic.setGameState(GameLogic.GameState.ACTIVE);
         gameBoard.setEmptyTile();
         gameWindow.revalidate();
         gameWindow.repaint();
