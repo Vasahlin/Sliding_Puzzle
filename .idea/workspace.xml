@@ -25,7 +25,7 @@
     </option>
   </component>
   <component name="Git.Merge.Settings">
-    <option name="BRANCH" value="GameLogic" />
+    <option name="BRANCH" value="Refactoring" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -41,12 +41,12 @@
     &quot;assignee&quot;: &quot;audioanton&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Vasahlin/Sliding_Puzzle",
-    "accountId": "fb76516b-ebfe-40f0-8c39-c0a004a38b9b"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Vasahlin/Sliding_Puzzle&quot;,
+    &quot;accountId&quot;: &quot;fb76516b-ebfe-40f0-8c39-c0a004a38b9b&quot;
   }
-}]]></component>
+}</component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -61,33 +61,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.GameWindow.executor": "Debug",
-    "Downloaded.Files.Path.Enabled": "false",
-    "JUnit.GameLogicTest.createShuffledValuesTest.executor": "Run",
-    "JUnit.GameLogicTest.executor": "Run",
-    "JUnit.GameLogicTest.getCurrentPuzzleOrderTest.executor": "Run",
-    "JUnit.GameLogicTest.isPuzzleSolvedTest.executor": "Run",
-    "JUnit.GameLogicTest.isValidMoveTest.executor": "Run",
-    "JUnit.GameLogicTest.lockGameStateTest.executor": "Run",
-    "JUnit.GameLogicTest.moveTileTest.executor": "Run",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "Refactoring",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Javaprogram/OOP/Exam_3/Test",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.GameWindow.executor&quot;: &quot;Debug&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;JUnit.GameLogicTest.createShuffledValuesTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GameLogicTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GameLogicTest.getCurrentPuzzleOrderTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GameLogicTest.isPuzzleSolvedTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GameLogicTest.isValidMoveTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GameLogicTest.lockGameStateTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GameLogicTest.moveTileTest.executor&quot;: &quot;Run&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Refactoring&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Javaprogram/OOP/Exam_3/Test&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
