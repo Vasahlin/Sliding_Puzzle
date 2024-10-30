@@ -26,7 +26,7 @@ public class ShuffleButton implements ShuffleButtonListener {
             moveCounter.resetMoveCount();
             shuffleButton.setText(shuffle);
             logic.setGameState(GameLogic.GameState.SHUFFLE);
-            gameBoard.setColor();
+            gameBoard.updateTileColors();
             puzzleListener.onPuzzleNotSolved();
         }
         do {

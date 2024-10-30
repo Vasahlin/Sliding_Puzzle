@@ -91,7 +91,7 @@ public class GameLogic {
             if (isPuzzleSolved()) {
                 gameState = GameState.WON_GAME;
                 notifyPuzzleListener();
-                gameBoard.setColor();
+                gameBoard.updateTileColors();
                 notifyShuffler();
                 gameBoard.lockGameState();
             }

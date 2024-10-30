@@ -51,9 +51,9 @@ public class GameBoard {
             for (int col = 0; col < amountColumns; col++) {
                 String value = values.get(index++);
                 tiles[row][col] = new Tile(new JButton(value));
-                int buttonHeight = 90;
-                int buttonWidth = 90;
-                tiles[row][col].button().setPreferredSize(new Dimension(buttonWidth, buttonHeight));
+                int tileWidth = 90;
+                int tileHeight = 90;
+                tiles[row][col].button().setPreferredSize(new Dimension(tileWidth, tileHeight));
                 tiles[row][col].button().addActionListener(new ButtonListener(row, col));
                 panel.add(tiles[row][col].button());
             }
@@ -120,11 +120,11 @@ public class GameBoard {
         }
     }
 
-    protected void setColor() {
+    protected void updateTileColors() {
         Color color;
         GameLogic.GameState state = gameLogic.getGameState();
         if (state == GameLogic.GameState.WON_GAME) {
-            color = Color.green;
+            color = winColor;
             for (Tile[] tile : tiles) {
                 for (Tile value : tile) {
                     value.button().setEnabled(false);
@@ -141,7 +141,6 @@ public class GameBoard {
                     value.button().setBackground(color);
                 }
             }
-            setEmptyTile();
         }
     }
 
@@ -151,8 +150,5 @@ public class GameBoard {
                 value.button().setEnabled(false);
             }
         }
-//        winMessage.setHorizontalAlignment(SwingConstants.CENTER);
-//        winMessage.setText("*** You win! ***");
-//        shuffleButton.setText()
     }
 }
