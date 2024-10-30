@@ -1,3 +1,6 @@
+import listeners.PuzzleSolvedListener;
+import listeners.ShuffleButtonListener;
+
 import javax.swing.*;
 
 public class ShuffleButton implements ShuffleButtonListener {

@@ -1,3 +1,5 @@
+import listeners.PuzzleSolvedListener;
+
 import javax.swing.*;
 import java.awt.*;
 

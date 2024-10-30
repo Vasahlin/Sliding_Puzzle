@@ -1,3 +1,7 @@
+import listeners.MoveCountObserver;
+import listeners.PuzzleSolvedListener;
+import listeners.ShuffleButtonListener;
+
 import java.util.ArrayList;
 
 public class GameLogic {

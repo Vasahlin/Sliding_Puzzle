@@ -1,3 +1,5 @@
+import listeners.MoveCountObserver;
+
 import javax.swing.*;
 import java.awt.*;
 
