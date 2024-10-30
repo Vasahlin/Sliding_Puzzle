@@ -31,7 +31,6 @@ public class GameWindow extends JFrame implements PuzzleSolvedListener {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
 
-
     private JPanel features(GameBoard gb, MoveCounter moveCounter) {
         JPanel features = new JPanel(new BorderLayout());
 

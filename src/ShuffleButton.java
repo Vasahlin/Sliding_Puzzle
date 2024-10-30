@@ -52,10 +52,5 @@ public class ShuffleButton implements ShuffleButtonListener {
             shuffleButton.getText().equals(shuffle)) {
             shuffleButton.setText("New Game");
         }
-//        else if (!shuffleButton.getText().equals(shuffle) &&
-//                   gameBoard.getGameLogic().getGameState() == GameLogic.GameState.SHUFFLE) {
-//            shuffleButton.setText(shuffle);
-//            gameWindow.setWinMessage();
-//        }
     }
 }
