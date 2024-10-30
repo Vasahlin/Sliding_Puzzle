@@ -26,13 +26,21 @@ public class GameBoard {
         return tiles;
     }
 
-    protected JPanel createGameBoard() {
+    protected JPanel createGameBoard(boolean showCase) {
         JPanel panel = new JPanel(new GridLayout(amountRows, amountColumns));
-        ArrayList<String> shuffledValues = createShuffledValues();
+        ArrayList<String> values;
+        if (showCase) {
+            values = ascendingValues();
+            setSolvedOrder(ascendingValues());
+            values.removeFirst();
+            values.add("0");
+        } else {
+            values = createShuffledValues();
+        }
         int index = 0;
         for (int row = 0; row < amountRows; row++) {
             for (int col = 0; col < amountColumns; col++) {
-                String value = shuffledValues.get(index++);
+                String value = values.get(index++);
                 tiles[row][col] = new Tile(new JButton(value));
                 tiles[row][col].button().addActionListener(new ButtonListener(row, col));
                 panel.add(tiles[row][col].button());
@@ -42,15 +50,25 @@ public class GameBoard {
         return panel;
     }
 
-    protected ArrayList<String> createShuffledValues() {
-        ArrayList<String> shuffledValues = new ArrayList<>();
+    protected ArrayList<String> ascendingValues() {
+        ArrayList<String> values = new ArrayList<>();
         for (int i = 0; i < amountRows * amountColumns; i++) {
-            shuffledValues.add(String.valueOf(i));
+            values.add(String.valueOf(i));
         }
-        gameLogic.setSolvedOrder(new ArrayList<>(shuffledValues.subList(1, shuffledValues.size())));
-        Collections.shuffle(shuffledValues);
-        return shuffledValues;
+        return values;
     }
+
+    protected ArrayList<String> createShuffledValues() {
+        ArrayList<String> values = ascendingValues();
+        setSolvedOrder(values);
+        Collections.shuffle(values);
+        return values;
+    }
+
+    private void setSolvedOrder(ArrayList<String> ascendingValues) {
+        gameLogic.setSolvedOrder(new ArrayList<>(ascendingValues.subList(1, ascendingValues.size())));
+    }
+
 
     private class ButtonListener implements ActionListener {
         private final int row, column;
