@@ -3,29 +3,23 @@ import java.awt.*;
 
 public class GameWindow extends JFrame {
     protected JLabel winMessage = new JLabel();
-    GameBoard gb;
+    protected GameBoard gameBoard;
 
     public GameWindow(boolean showCase) {
-        gb = new GameBoard(3,3);
+        gameBoard = new GameBoard(3,3);
         setLayout(new BorderLayout());
-        if (showCase) {
-            add(gb.createGameBoard(true), BorderLayout.CENTER);
-        } else {
-            add(gb.createGameBoard(false), BorderLayout.CENTER);
-        }
-        MoveCounter mc = new MoveCounter(this, gb.getGameLogic());
-        gb.getGameLogic().setMoveCountListener(mc);
-        add(mc.movePanel(), BorderLayout.NORTH);
 
-        JPanel southPanel = new JPanel(new BorderLayout());
-        JButton exitButton = new JButton("Exit");
-        exitButton.addActionListener(_ -> System.exit(0));
-        southPanel.add(winMessage, BorderLayout.NORTH);
-        ShuffleButton sb = new ShuffleButton(gb,this);
-        gb.getGameLogic().setShuffleButtonListener(sb);
-        southPanel.add(sb.shuffleButton(mc), BorderLayout.CENTER);
-        southPanel.add(exitButton, BorderLayout.SOUTH);
-        add(southPanel, BorderLayout.SOUTH);
+        MoveCounter moveCounter = new MoveCounter(this, gameBoard.getGameLogic());
+        gameBoard.getGameLogic().setMoveCountListener(moveCounter);
+        add(moveCounter.movePanel(), BorderLayout.NORTH);
+
+        if (showCase) {
+            add(gameBoard.createGameBoard(true), BorderLayout.CENTER);
+        } else {
+            add(gameBoard.createGameBoard(false), BorderLayout.CENTER);
+        }
+
+        add(features(gameBoard, moveCounter), BorderLayout.SOUTH);
 
         pack();
         setTitle("Sliding Puzzle");
@@ -33,6 +27,21 @@ public class GameWindow extends JFrame {
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
+
+    private JPanel features(GameBoard gb, MoveCounter mc) {
+        JPanel features = new JPanel(new BorderLayout());
+        features.add(winMessage, BorderLayout.NORTH);
+
+        ShuffleButton sb = new ShuffleButton(gb,this);
+        gb.getGameLogic().setShuffleButtonListener(sb);
+        features.add(sb.shuffleButton(mc), BorderLayout.CENTER);
+
+        JButton exitButton = new JButton("Exit");
+        exitButton.addActionListener(_ -> System.exit(0));
+        features.add(exitButton, BorderLayout.SOUTH);
+        return features;
+    }
+
 
     public static void main(String[] args) {
         if (args.length == 0) {
