@@ -13,9 +13,9 @@ public class MoveCounter implements MoveCountListener {
 
     public JPanel movePanel() {
         JPanel panel = new JPanel(new GridLayout(1, 3));
-        panel.add(Box.createRigidArea(new Dimension(30, 30)), 0);
         label.setText(String.format("Moves: %d", moveCount));
-        panel.add(label);
+        panel.add(label,0);
+        panel.add(Box.createRigidArea(new Dimension(30, 30)), 1);
         panel.add(Box.createRigidArea(new Dimension(30, 30)), 2);
         return panel;
     }
