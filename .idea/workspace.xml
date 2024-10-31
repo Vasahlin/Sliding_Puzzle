@@ -1,28 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="5975c192-4b2c-4a10-b776-2a9d69c619a3" name="Changes" comment="Moved listeners to separate package">
-      <change beforePath="$PROJECT_DIR$/src/ShuffleButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ShuffleButton.java" afterDir="false" />
+    <list default="true" id="f52dffab-784f-43b0-9078-8f22c8b77ea8" name="Changes" comment="Fully refactored program to fit Model-View-Controller pattern">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="JUnit5 Test Class" />
-        <option value="Class" />
-        <option value="Interface" />
-      </list>
-    </option>
-  </component>
-  <component name="Git.Merge.Settings">
-    <option name="BRANCH" value="GameLogic" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -32,326 +17,48 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;audioanton&quot;
-  }
-}</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Vasahlin/Sliding_Puzzle.git&quot;,
-    &quot;accountId&quot;: &quot;573e9faf-8d2f-4772-8d07-1ba2b3731144&quot;
-  }
-}</component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
-  </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 5
-}</component>
-  <component name="ProjectId" id="2o3vvPWh1SPY0ILT3gMrPbOZNas" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
-  <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showLibraryContents" value="true" />
-  </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.GameWindow.executor": "Run",
-    "Downloaded.Files.Path.Enabled": "false",
-    "JUnit.GameLogicTest.createShuffledValuesTest.executor": "Run",
-    "JUnit.GameLogicTest.executor": "Run",
-    "JUnit.GameLogicTest.getCurrentPuzzleOrderTest.executor": "Run",
-    "JUnit.GameLogicTest.isPuzzleSolvedTest.executor": "Debug",
-    "JUnit.GameLogicTest.lockGameStateTest.executor": "Run",
-    "JUnit.GameLogicTest.moveTileTest.executor": "Run",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "feature/feature__shuffle",
-    "kotlin-language-version-configured": "true",
+    "Application.Main.executor": "Run",
+    "git-widget-placeholder": "Model-View-Controller",
     "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+    "node.js.selected.package.tslint": "(autodetect)"
   }
 }]]></component>
-  <component name="RecentsManager">
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
-    </key>
-    <key name="CreateTestDialog.RecentsKey">
-      <recent name="" />
-    </key>
-  </component>
-  <component name="RunManager" selected="Application.GameWindow">
-    <configuration name="GameWindow" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="GameWindow" />
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Sliding_Puzzle" />
       <option name="PROGRAM_PARAMETERS" value="showcase" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GameLogicTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Sliding_Puzzle" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GameLogicTest" />
-      <option name="METHOD_NAME" value="getCurrentPuzzleOrderTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GameLogicTest.createShuffledValuesTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Sliding_Puzzle" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GameLogicTest" />
-      <option name="METHOD_NAME" value="createShuffledValuesTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GameLogicTest.lockGameStateTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Sliding_Puzzle" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GameLogicTest" />
-      <option name="METHOD_NAME" value="lockGameStateTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GameLogicTest.moveTileTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Sliding_Puzzle" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GameLogicTest" />
-      <option name="METHOD_NAME" value="moveTileTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.GameWindow" />
-        <item itemvalue="Application.GameWindow" />
-        <item itemvalue="JUnit.GameLogicTest.moveTileTest" />
-        <item itemvalue="JUnit.GameLogicTest.createShuffledValuesTest" />
-        <item itemvalue="JUnit.GameLogicTest" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-jdk-9823dce3aa75-b114ca120d71-intellij.indexing.shared.core-IU-242.20224.419" />
-        <option value="bundled-js-predefined-d6986cc7102b-410509235cf1-JavaScript-IU-242.20224.419" />
-      </set>
-    </attachedChunks>
-  </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="5975c192-4b2c-4a10-b776-2a9d69c619a3" name="Changes" comment="" />
-      <created>1730111306128</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1730111306128</updated>
-      <workItem from="1730111307246" duration="2000" />
-      <workItem from="1730111571443" duration="18000" />
-      <workItem from="1730111571443" duration="1271000" />
-      <workItem from="1730194318068" duration="12803000" />
-      <workItem from="1730217561368" duration="2905000" />
-      <workItem from="1730275222836" duration="52000" />
-      <workItem from="1730292908067" duration="483000" />
-    </task>
-    <task id="LOCAL-00001" summary="Hej Victor">
+    <task id="LOCAL-00001" summary="Fully refactored program to fit Model-View-Controller pattern">
       <option name="closed" value="true" />
-      <created>1730111613966</created>
+      <created>1730384798946</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1730111613966</updated>
+      <updated>1730384798946</updated>
     </task>
-    <task id="LOCAL-00002" summary="Initial Framework, pair coding">
-      <option name="closed" value="true" />
-      <created>1730196098575</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1730196098575</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Added comment in main">
-      <option name="closed" value="true" />
-      <created>1730196303054</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1730196303054</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Added unprogrammed methods.">
-      <option name="closed" value="true" />
-      <created>1730197781219</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1730197781219</updated>
-    </task>
-    <task id="LOCAL-00005" summary="wrote isValidMove();">
-      <option name="closed" value="true" />
-      <created>1730198193449</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1730198193449</updated>
-    </task>
-    <task id="LOCAL-00006" summary="wrote moveTile();">
-      <option name="closed" value="true" />
-      <created>1730198748626</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1730198748626</updated>
-    </task>
-    <task id="LOCAL-00007" summary="wrote moveTile();">
-      <option name="closed" value="true" />
-      <created>1730198869656</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1730198869656</updated>
-    </task>
-    <task id="LOCAL-00008" summary="started writing isPuzzleSolved(),&#10;added test root sources">
-      <option name="closed" value="true" />
-      <created>1730199855258</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1730199855258</updated>
-    </task>
-    <task id="LOCAL-00009" summary="removed test sources root">
-      <option name="closed" value="true" />
-      <created>1730200065524</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1730200065524</updated>
-    </task>
-    <task id="LOCAL-00010" summary="added getCurrentPuzzleOrder()">
-      <option name="closed" value="true" />
-      <created>1730200300086</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1730200300086</updated>
-    </task>
-    <task id="LOCAL-00011" summary="changed isPuzzleSolved()">
-      <option name="closed" value="true" />
-      <created>1730200562648</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1730200562648</updated>
-    </task>
-    <task id="LOCAL-00012" summary="tested isValidMove()">
-      <option name="closed" value="true" />
-      <created>1730209692619</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1730209692619</updated>
-    </task>
-    <task id="LOCAL-00013" summary="added empty String to end of solvedPuzzleOrder. tested isPuzzleSolved()">
-      <option name="closed" value="true" />
-      <created>1730211998570</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1730211998570</updated>
-    </task>
-    <task id="LOCAL-00014" summary="tested moveTile()">
-      <option name="closed" value="true" />
-      <created>1730212654729</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1730212654729</updated>
-    </task>
-    <task id="LOCAL-00015" summary="added createShowcase(), &#10;resetEmptyTile()">
-      <option name="closed" value="true" />
-      <created>1730220147349</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1730220147349</updated>
-    </task>
-    <option name="localTasksCounter" value="16" />
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="origin/Develop" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Hej Victor" />
-    <MESSAGE value="Initial Framework, pair coding" />
-    <MESSAGE value="Added comment in main" />
-    <MESSAGE value="Added unprogrammed methods." />
-    <MESSAGE value="wrote isValidMove();" />
-    <MESSAGE value="wrote moveTile();" />
-    <MESSAGE value="started writing isPuzzleSolved(),&#10;added test root sources" />
-    <MESSAGE value="removed test sources root" />
-    <MESSAGE value="added getCurrentPuzzleOrder()" />
-    <MESSAGE value="changed isPuzzleSolved()" />
-    <MESSAGE value="tested isValidMove()" />
-    <MESSAGE value="added empty String to end of solvedPuzzleOrder. tested isPuzzleSolved()" />
-    <MESSAGE value="tested moveTile()" />
-    <MESSAGE value="merged GameLogic" />
-    <MESSAGE value="added createShowcase(), &#10;resetEmptyTile()" />
-    <MESSAGE value="Implemented a check that a puzzle is solvable in createGameBoard" />
-    <MESSAGE value="Moved listeners to separate package" />
-    <option name="LAST_COMMIT_MESSAGE" value="Moved listeners to separate package" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/test/GameLogicTest.java</url>
-          <line>59</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Fully refactored program to fit Model-View-Controller pattern" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fully refactored program to fit Model-View-Controller pattern" />
   </component>
 </project>
