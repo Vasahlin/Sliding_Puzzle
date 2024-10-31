@@ -7,6 +7,7 @@ public class GameView extends JPanel {
     private JPanel moveCounter;
     private JPanel features;
     private JButton shuffleButton;
+    private JButton exitButton;
     private JLabel winMessage;
     private JLabel moves;
     private final GameModel model;
@@ -30,6 +31,24 @@ public class GameView extends JPanel {
 
     public JButton getShuffleButton() {
         return shuffleButton;
+    }
+
+    public JButton getExitButton() {
+        return exitButton;
+    }
+
+    protected void updateMoveCounter() {
+        moves.setText(String.format("Moves: %d", model.getMoveCount()));
+    }
+
+    protected void notifyWon() {
+        winMessage.setText("*** You win! ***");
+        shuffleButton.setText("New game");
+    }
+
+    protected void notifyNewGame() {
+        winMessage.setText("");
+        shuffleButton.setText("Shuffle");
     }
 
     protected void swapValues(int pressedRow, int pressedCol, int value) {
@@ -83,13 +102,8 @@ public class GameView extends JPanel {
         features.add(shuffleButton, BorderLayout.CENTER);
 
         //Exit button
-        JButton exitButton = new JButton("Exit");
-        exitButton.addActionListener(_ -> System.exit(0));
+        exitButton = new JButton("Exit");
         features.add(exitButton, BorderLayout.SOUTH);
-    }
-
-    protected void updateMoveCounter() {
-        moves.setText(String.format("Moves: %d", model.getMoveCount()));
     }
 
     protected void updateBoard() {
@@ -110,16 +124,6 @@ public class GameView extends JPanel {
         }
         repaint();
         revalidate();
-    }
-
-    protected void notifyWon() {
-        winMessage.setText("*** You win! ***");
-        shuffleButton.setText("New game");
-    }
-
-    protected void notifyNewGame() {
-        winMessage.setText("");
-        shuffleButton.setText("Shuffle");
     }
 
     protected void setGameState() {

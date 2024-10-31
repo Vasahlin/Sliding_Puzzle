@@ -94,7 +94,8 @@ public class GameModel {
     protected boolean isValidMove(int pressedRow, int pressedCol) {
         int horizontalDistance = Math.abs(pressedCol - emptyTileCol);
         int verticalDistance = Math.abs(pressedRow - emptyTileRow);
-        return (horizontalDistance == 1 && pressedRow == emptyTileRow) || (verticalDistance == 1 && pressedCol == emptyTileCol);
+        return (horizontalDistance == 1 && pressedRow == emptyTileRow) ||
+               (verticalDistance == 1 && pressedCol == emptyTileCol);
     }
 
     protected boolean isPuzzleSolved() {

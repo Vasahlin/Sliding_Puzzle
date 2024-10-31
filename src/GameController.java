@@ -11,15 +11,7 @@ public class GameController {
         this.view = view;
         setupButtonListeners();
         setupShuffleListener();
-    }
-
-    private void setupButtonListeners() {
-        JButton[][] buttons = view.getTileButtons();
-        for (int row = 0; row < model.getAmountRows(); row++) {
-            for (int col = 0; col < model.getAmountColumns(); col++) {
-                buttons[row][col].addActionListener(new ButtonListener(row, col));
-            }
-        }
+        setupExitListener();
     }
 
     private void setupShuffleListener() {
@@ -40,6 +32,19 @@ public class GameController {
         model.resetMoveCount();
         view.updateMoveCounter();
         view.updateBoard();
+    }
+
+    private void setupExitListener() {
+        view.getExitButton().addActionListener(_ -> System.exit(0));
+    }
+
+    private void setupButtonListeners() {
+        JButton[][] buttons = view.getTileButtons();
+        for (int row = 0; row < model.getAmountRows(); row++) {
+            for (int col = 0; col < model.getAmountColumns(); col++) {
+                buttons[row][col].addActionListener(new ButtonListener(row, col));
+            }
+        }
     }
 
     private class ButtonListener implements ActionListener {
