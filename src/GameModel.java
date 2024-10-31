@@ -74,21 +74,6 @@ public class GameModel {
         findEmptyTile();
     }
 
-//    public boolean performAction(int row, int column) {
-//        if (moveTile(row, column)) {
-//
-////            notifyMoveCount();
-//            if (isPuzzleSolved()) {
-//                gameState = GameState.WON_GAME;
-////                notifyPuzzleListener();
-////                notifyShuffler();
-////                gameBoard.lockGameState();
-//            }
-//            return true;
-//        }
-//        return false;
-//    }
-
     protected void incrementMoveCount() {
         moveCount++;
     }
@@ -224,8 +209,7 @@ public class GameModel {
                 return invCount % 2 != 1;
         }
     }
-
-
+    
     private int getInvCount(int[] arr) {
         int inv_count = 0;
         for (int row = 0; row < amountRows * -1; row++) {

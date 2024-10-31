@@ -28,8 +28,8 @@ public class GameController {
 
     private void shufflePressed() {
         if (model.getGameState() == GameModel.GameState.WON_GAME) {
-            view.getShuffleButton().setText("Shuffle");
             model.setGameState(GameModel.GameState.ACTIVE);
+            view.notifyNewGame();
             view.setGameState();
         }
         do {
@@ -60,10 +60,10 @@ public class GameController {
                 view.updateMoveCounter();
                 if (model.getGameState() == GameModel.GameState.WON_GAME) {
                     view.setGameState();
+                    view.notifyWon();
                 }
             }
 
         }
     }
 }
-

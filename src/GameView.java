@@ -9,8 +9,8 @@ public class GameView extends JPanel {
     private JButton shuffleButton;
     private JLabel winMessage;
     private JLabel moves;
-    private GameModel model;
-    private Color defaultColor = new JButton().getBackground();
+    private final GameModel model;
+    private final Color defaultColor = new JButton().getBackground();
 
     public GameView(GameModel model) {
         this.model = model;
@@ -47,7 +47,7 @@ public class GameView extends JPanel {
         buttonPanel = new JPanel(new GridLayout(amountRows, amountCols));
         tileButtons = new JButton[amountRows][amountCols];
         int value;
-        int buttonHeight = 90, buttonWidth = 90;
+        int buttonHeight = 100, buttonWidth = 100;
         for (int row = 0; row < amountRows; row++) {
             for (int col = 0; col < amountCols; col++) {
                 value = tiles[row][col].value;
@@ -56,6 +56,7 @@ public class GameView extends JPanel {
                 buttonPanel.add(tileButtons[row][col]);
             }
         }
+        tileButtons[model.getEmptyTileRow()][model.getEmptyTileCol()].setEnabled(false);
     }
 
     private void initializeMoveCounter() {
@@ -68,8 +69,23 @@ public class GameView extends JPanel {
 
     private void initializeFeatures() {
         features = new JPanel(new BorderLayout());
+
+        //Win panel
+        JPanel winPanel = new JPanel(new GridLayout(1,3));
+        winMessage = new JLabel("");
+        winPanel.add(Box.createRigidArea(new Dimension(20,20)),0);
+        winPanel.add(winMessage, 1);
+        winPanel.add(Box.createRigidArea(new Dimension(20,20)),2);
+        features.add(winPanel, BorderLayout.NORTH);
+
+        //Shuffle button
         shuffleButton = new JButton("shuffle");
         features.add(shuffleButton, BorderLayout.CENTER);
+
+        //Exit button
+        JButton exitButton = new JButton("Exit");
+        exitButton.addActionListener(_ -> System.exit(0));
+        features.add(exitButton, BorderLayout.SOUTH);
     }
 
     protected void updateMoveCounter() {
@@ -85,8 +101,10 @@ public class GameView extends JPanel {
                 value = tiles[row][col].value;
                 if (value == 0) {
                     tileButtons[row][col].setText("");
+                    tileButtons[row][col].setEnabled(false);
                 } else {
                     tileButtons[row][col].setText(String.valueOf(value));
+                    tileButtons[row][col].setEnabled(true);
                 }
             }
         }
@@ -94,6 +112,15 @@ public class GameView extends JPanel {
         revalidate();
     }
 
+    protected void notifyWon() {
+        winMessage.setText("*** You win! ***");
+        shuffleButton.setText("New game");
+    }
+
+    protected void notifyNewGame() {
+        winMessage.setText("");
+        shuffleButton.setText("Shuffle");
+    }
 
     protected void setGameState() {
         int amountRows = model.getAmountRows(), amountCols = model.getAmountColumns();
