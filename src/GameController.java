@@ -26,9 +26,8 @@ public class GameController {
         }
         do {
             model.shuffleValues();
-            model.findEmptyTile();
         } while (model.isNotSolvable(model.getTiles()));
-
+        model.findEmptyTile();
         model.resetMoveCount();
         view.updateMoveCounter();
         view.updateBoard();
