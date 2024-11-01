@@ -17,7 +17,7 @@ public class GameModel {
     }
 
     public enum GameState {
-        ACTIVE, WON_GAME, SHUFFLE
+        ACTIVE, WON_GAME
     }
 
     public int getEmptyTileCol() {

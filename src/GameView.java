@@ -128,18 +128,18 @@ public class GameView extends JPanel {
 
     protected void setGameState() {
         int amountRows = model.getAmountRows(), amountCols = model.getAmountColumns();
-        boolean enabled;
+        boolean isEnabled;
         Color color;
         if (model.getGameState() == GameModel.GameState.WON_GAME) {
-            enabled = false;
+            isEnabled = false;
             color = Color.green;
         } else {
-            enabled = true;
+            isEnabled = true;
             color = defaultColor;
         }
         for (int row = 0; row < amountRows; row++) {
             for (int col = 0; col < amountCols; col++) {
-                tileButtons[row][col].setEnabled(enabled);
+                tileButtons[row][col].setEnabled(isEnabled);
                 tileButtons[row][col].setBackground(color);
             }
         }
