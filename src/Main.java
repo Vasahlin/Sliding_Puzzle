@@ -9,7 +9,8 @@ public class Main {
             model = new GameModel(3,3,true);
         }
 
-        GameView view = new GameView(model);
+        GameView view = new GameView(
+                model.getTiles(), model.getEmptyTileRow(), model.getEmptyTileCol(), model.getMoveCount());
         new GameController(model, view);
 
         JFrame frame = new JFrame("Sliding Puzzle");

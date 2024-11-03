@@ -56,7 +56,6 @@ public class GameModel {
         ArrayList<Integer> values;
         if (showCase) {
             values = ascendingValues();
-            setSolvedOrder(ascendingValues());
             values.removeFirst();
             values.add(0);
         } else {
@@ -71,7 +70,8 @@ public class GameModel {
         while (isNotSolvable(tiles)) {
             shuffleValues();
         }
-        findEmptyTile();
+        setEmptyTile();
+        setSolvedOrder(ascendingValues());
     }
 
     protected void incrementMoveCount() {
@@ -128,7 +128,7 @@ public class GameModel {
         emptyTileCol = col;
     }
 
-    protected void findEmptyTile() {
+    protected void setEmptyTile() {
         for (int row = 0; row < amountRows; row++) {
             for (int col = 0; col < amountColumns; col++) {
                 if (tiles[row][col].value == 0) {

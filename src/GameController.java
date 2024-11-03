@@ -14,6 +14,10 @@ public class GameController {
         setupExitListener();
     }
 
+    private void setupExitListener() {
+        view.getExitButton().addActionListener(_ -> System.exit(0));
+    }
+
     private void setupShuffleListener() {
         view.getShuffleButton().addActionListener(_ -> shufflePressed());
     }
@@ -21,20 +25,16 @@ public class GameController {
     private void shufflePressed() {
         if (model.getGameState() == GameModel.GameState.WON_GAME) {
             model.setGameState(GameModel.GameState.ACTIVE);
-            view.notifyNewGame();
-            view.setGameState();
+            view.displayNewGame();
+            view.setGameState(model.getAmountRows(), model.getAmountColumns(), model.getGameState());
         }
         do {
             model.shuffleValues();
         } while (model.isNotSolvable(model.getTiles()));
-        model.findEmptyTile();
+        model.setEmptyTile();
         model.resetMoveCount();
-        view.updateMoveCounter();
-        view.updateBoard();
-    }
-
-    private void setupExitListener() {
-        view.getExitButton().addActionListener(_ -> System.exit(0));
+        view.updateMoveCounter(model.getMoveCount());
+        view.updateBoard(model.getTiles());
     }
 
     private void setupButtonListeners() {
@@ -58,13 +58,13 @@ public class GameController {
         public void actionPerformed(ActionEvent e) {
             int tileValue = model.getTiles()[row][column].value;
             if (model.isValidMove(this.row, this.column)) {
-                view.swapValues(this.row, this.column, tileValue);
+                view.swapValues(this.row, this.column, tileValue, model.getEmptyTileRow(), model.getEmptyTileCol());
                 model.moveTile(this.row, this.column);
                 model.incrementMoveCount();
-                view.updateMoveCounter();
+                view.updateMoveCounter(model.getMoveCount());
                 if (model.getGameState() == GameModel.GameState.WON_GAME) {
-                    view.setGameState();
-                    view.notifyWon();
+                    view.setGameState(model.getAmountRows(), model.getAmountColumns(), model.getGameState());
+                    view.displayWin();
                 }
             }
 
