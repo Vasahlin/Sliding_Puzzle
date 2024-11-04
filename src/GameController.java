@@ -67,7 +67,6 @@ public class GameController {
                     view.displayWin();
                 }
             }
-
         }
     }
 }

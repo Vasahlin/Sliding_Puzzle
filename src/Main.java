@@ -4,11 +4,10 @@ public class Main {
     public static void main(String[] args) {
         GameModel model;
         if (args.length == 0) {
-            model = new GameModel(3,3,false);
+            model = new GameModel(4,4,false);
         } else {
-            model = new GameModel(3,3,true);
+            model = new GameModel(4,4,true);
         }
-
         GameView view = new GameView(
                 model.getTiles(), model.getEmptyTileRow(), model.getEmptyTileCol(), model.getMoveCount());
         new GameController(model, view);
